@@ -1,0 +1,54 @@
+name: neon_apps_case
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Routing
+  auto_route: ^10.0.1
+
+  # Networking
+  dio: ^5.8.0+1
+
+  # State Management
+  flutter_bloc: ^9.1.0
+
+  # UI
+  oktoast: ^3.4.0
+
+  # Dependency Injection
+  get_it: ^8.0.3
+
+  # Serialization
+  freezed_annotation: ^3.0.0
+  json_annotation: ^4.9.0
+
+  # Core
+  penta_core: ^1.0.2+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Linting
+  very_good_analysis: ^7.0.0
+
+  # Code Generation
+  build_runner: ^2.4.15
+  auto_route_generator: ^10.0.1
+  freezed: ^3.0.6
+  json_serializable: ^6.9.5
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/lotties/

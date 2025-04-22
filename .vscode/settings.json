@@ -1,0 +1,15 @@
+{
+  "emeraldwalk.runonsave": {
+    "autoClearConsole": true,
+    "commands": [
+      {
+        "match": "assets\\\\translations\\\\enUS.json$",
+        "cmd": "flutter pub run penta_core:lang_generator ./assets/translations/enUS.json ./lib/app/common/localization LocaleKeys",
+        "isAsync": true,
+        "message": "Generating Translation Keys...",
+        "messageAfter": "Translation Keys Generated",
+        "autoShowOutputPanel": "error"
+      },
+    ]
+  }
+}

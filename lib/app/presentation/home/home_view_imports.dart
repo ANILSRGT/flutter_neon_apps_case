@@ -1,0 +1,19 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:neon_apps_case/app/common/configs/enums/icons_enum.dart';
+import 'package:neon_apps_case/app/common/configs/enums/images_enum.dart';
+import 'package:neon_apps_case/app/common/configs/theme/i_app_theme.dart';
+import 'package:neon_apps_case/app/common/extensions/widget_ext.dart';
+import 'package:neon_apps_case/app/common/widgets/button/app_button.dart';
+import 'package:neon_apps_case/app/common/widgets/card/app_card.dart';
+import 'package:neon_apps_case/app/common/widgets/logo/app_logo.dart';
+import 'package:neon_apps_case/app/common/widgets/safearea/custom_safe_area.dart';
+import 'package:neon_apps_case/app/common/widgets/text/header_text.dart';
+import 'package:penta_core/penta_core.dart';
+
+part 'view/home_view.dart';
+part 'widgets/home_view_body.dart';
+part 'widgets/home_view_header.dart';
+part 'widgets/home_view_child_with_header.dart';
+part 'widgets/home_view_current_exhibitions.dart';
+part 'widgets/home_view_famous_artworks.dart';
