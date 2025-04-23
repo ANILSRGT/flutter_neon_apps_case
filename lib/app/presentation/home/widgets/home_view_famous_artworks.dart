@@ -5,14 +5,20 @@ class _HomeViewFamousArtworks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 200,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 3,
-        itemBuilder: (_, index) {
-          return const Card();
-        },
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: AppValues.xl2.ext.padding.horizontal,
+      child: IntrinsicHeight(
+        child: Row(
+          children: List.generate(3, (index) {
+            return Row(
+              children: [
+                const MetArtworkCard(metObjectModel: MetObjectModel()),
+                if (index != 2) AppValues.xl2.ext.sizedBox.horizontal,
+              ],
+            );
+          }),
+        ),
       ),
     );
   }

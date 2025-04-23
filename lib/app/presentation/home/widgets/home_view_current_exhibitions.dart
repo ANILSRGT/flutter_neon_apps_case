@@ -5,16 +5,20 @@ class _HomeViewCurrentExhibitions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 300,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: 3,
-        padding: AppValues.xl2.ext.padding.horizontal,
-        separatorBuilder: (_, __) => AppValues.xl2.ext.sizedBox.horizontal,
-        itemBuilder: (_, index) {
-          return const AppCard(width: 200);
-        },
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: AppValues.xl2.ext.padding.horizontal,
+      child: IntrinsicHeight(
+        child: Row(
+          children: List.generate(3, (index) {
+            return Row(
+              children: [
+                const MetArtworkCard(metObjectModel: MetObjectModel()),
+                if (index != 2) AppValues.xl2.ext.sizedBox.horizontal,
+              ],
+            );
+          }),
+        ),
       ),
     );
   }

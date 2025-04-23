@@ -24,7 +24,7 @@ class _HomeViewBody extends StatelessWidget {
             AppValues.xl2.ext.sizedBox.vertical,
             _HomeViewChildWithHeader(
               onSeeAllTap: () {},
-              header: 'Upcoming Exhibitions',
+              header: 'Famous Artworks',
               child: const _HomeViewFamousArtworks(),
             ),
           ],

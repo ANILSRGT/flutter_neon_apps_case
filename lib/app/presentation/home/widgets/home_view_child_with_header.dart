@@ -16,12 +16,13 @@ class _HomeViewChildWithHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        AppValues.xl2.ext.sizedBox.vertical,
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           spacing: AppValues.sm.value,
           children: [
-            HeaderText(text: header),
+            HeaderText(
+              text: header,
+            ).appWidgetExt.paddingOnly(left: AppValues.xs.value),
             GestureDetector(
               onTap: onSeeAllTap,
               behavior: HitTestBehavior.translucent,
@@ -31,7 +32,7 @@ class _HomeViewChildWithHeader extends StatelessWidget {
                     'See all',
                     style: context.ext.theme.textTheme.bodyLarge?.copyWith(
                       color: context.appThemeExt.appColors.grey.light,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   IconsEnum.imgForward.toAssetImage(),
@@ -40,7 +41,7 @@ class _HomeViewChildWithHeader extends StatelessWidget {
             ),
           ],
         ).appWidgetExt.paddingSymmetric(horizontal: AppValues.xl.value),
-        AppValues.xl2.ext.sizedBox.vertical,
+        AppValues.lg.ext.sizedBox.vertical,
         child,
       ],
     );

@@ -5,10 +5,11 @@ import 'package:neon_apps_case/app/common/configs/enums/images_enum.dart';
 import 'package:neon_apps_case/app/common/configs/theme/i_app_theme.dart';
 import 'package:neon_apps_case/app/common/extensions/widget_ext.dart';
 import 'package:neon_apps_case/app/common/widgets/button/app_button.dart';
-import 'package:neon_apps_case/app/common/widgets/card/app_card.dart';
+import 'package:neon_apps_case/app/common/widgets/card/met_artwork_card.dart';
 import 'package:neon_apps_case/app/common/widgets/logo/app_logo.dart';
 import 'package:neon_apps_case/app/common/widgets/safearea/custom_safe_area.dart';
 import 'package:neon_apps_case/app/common/widgets/text/header_text.dart';
+import 'package:neon_apps_case/app/data/models/met_object_model.dart';
 import 'package:penta_core/penta_core.dart';
 
 part 'view/home_view.dart';
