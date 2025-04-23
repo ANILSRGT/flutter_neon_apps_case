@@ -29,12 +29,14 @@ enum IconsEnum {
     double? height,
     BoxFit fit = BoxFit.contain,
     ImageSizesEnum size = ImageSizesEnum.x,
+    Color? color,
   }) {
     return Image.asset(
       path(size: size),
       width: width,
       height: height,
       fit: fit,
+      color: color,
       errorBuilder: (_, __, ___) => const Icon(Icons.photo_library_outlined),
     );
   }

@@ -14,6 +14,7 @@ class _MainViewBottomNavBarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.translucent,
       onTap: () {
         context.read<MainViewCubit>().changePage(index);
       },

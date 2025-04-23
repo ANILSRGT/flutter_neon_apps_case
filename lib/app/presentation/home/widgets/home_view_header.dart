@@ -19,13 +19,16 @@ class _HomeViewHeader extends StatelessWidget {
             spacing: AppValues.sm.value,
             children: [
               Text(
-                'Welcome\nto The Met',
+                AppStrings.homeWelcomeMessage,
                 style: context.ext.theme.textTheme.displayMedium?.copyWith(
                   fontWeight: FontWeight.w500,
                   color: context.appThemeExt.appColors.white.light,
                 ),
               ),
-              AppButton.normal(onPressed: () {}, text: 'Explore Collection'),
+              AppButton.normal(
+                onPressed: () {},
+                text: AppStrings.homeExploreCollectionButton,
+              ),
             ],
           ),
         ),

@@ -9,7 +9,7 @@ class _MainViewBody extends StatelessWidget {
       builder: (context, state) {
         return IndexedStack(
           index: state.currentIndex,
-          children: const [HomeView(), Scaffold(), Scaffold()],
+          children: const [HomeView(), CollectionView(), InfoView()],
         );
       },
     );

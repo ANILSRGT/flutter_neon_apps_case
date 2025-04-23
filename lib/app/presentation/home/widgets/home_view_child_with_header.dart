@@ -3,13 +3,11 @@ part of '../home_view_imports.dart';
 class _HomeViewChildWithHeader extends StatelessWidget {
   const _HomeViewChildWithHeader({
     required this.header,
-    required this.child,
-    required this.onSeeAllTap,
+    required this.artworks,
   });
 
   final String header;
-  final Widget child;
-  final VoidCallback? onSeeAllTap;
+  final List<MetObjectModel> artworks;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +22,16 @@ class _HomeViewChildWithHeader extends StatelessWidget {
               text: header,
             ).appWidgetExt.paddingOnly(left: AppValues.xs.value),
             GestureDetector(
-              onTap: onSeeAllTap,
+              onTap: () {
+                Injection.I.read<AppRouter>().push(
+                  SeeAllRoute(title: header, items: artworks),
+                );
+              },
               behavior: HitTestBehavior.translucent,
               child: Row(
                 children: [
                   Text(
-                    'See all',
+                    AppStrings.seeAll,
                     style: context.ext.theme.textTheme.bodyLarge?.copyWith(
                       color: context.appThemeExt.appColors.grey.light,
                       fontWeight: FontWeight.w500,
@@ -42,7 +44,20 @@ class _HomeViewChildWithHeader extends StatelessWidget {
           ],
         ).appWidgetExt.paddingSymmetric(horizontal: AppValues.xl.value),
         AppValues.lg.ext.sizedBox.vertical,
-        child,
+        SizedBox(
+          height: 310,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            padding: AppValues.xl.ext.padding.horizontal,
+            itemCount: artworks.length,
+            separatorBuilder: (_, index) {
+              return AppValues.xl2.ext.sizedBox.horizontal;
+            },
+            itemBuilder: (_, index) {
+              return MetArtworkCard(width: 200, artwork: artworks[index]);
+            },
+          ),
+        ),
       ],
     );
   }

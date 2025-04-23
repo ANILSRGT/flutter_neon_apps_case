@@ -41,6 +41,9 @@ class _MainViewBottomNavBar extends StatelessWidget {
                           context.ext.theme.isDark,
                         ),
                         shape: BoxShape.circle,
+                        boxShadow: const [
+                          BoxShadow(color: Colors.black26, blurRadius: 8),
+                        ],
                       ),
                       child: _MainViewBottomNavBarItem(
                         index: 1,
@@ -70,7 +73,7 @@ class _MainViewBottomNavBar extends StatelessWidget {
                                       ? IconsEnum.btnTabbarHomeSelected
                                       : IconsEnum.btnTabbarHomeUnselected)
                                   .toAssetImage(),
-                      label: (isSelected) => 'Home',
+                      label: (isSelected) => AppStrings.mainHomeNavLabel,
                     ),
                   ),
                   Positioned(
@@ -85,7 +88,7 @@ class _MainViewBottomNavBar extends StatelessWidget {
                                       ? IconsEnum.btnTabbarInfoSelected
                                       : IconsEnum.btnTabbarInfoUnselected)
                                   .toAssetImage(),
-                      label: (isSelected) => 'Info',
+                      label: (isSelected) => AppStrings.mainInfoNavLabel,
                     ),
                   ),
                 ],

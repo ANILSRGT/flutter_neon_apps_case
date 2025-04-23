@@ -1,25 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:neon_apps_case/app/common/configs/app_strings.dart';
 import 'package:neon_apps_case/app/common/configs/theme/i_app_theme.dart';
 import 'package:neon_apps_case/app/common/extensions/widget_ext.dart';
+import 'package:neon_apps_case/app/common/injections/injection.dart';
+import 'package:neon_apps_case/app/common/router/app_router.dart';
 import 'package:neon_apps_case/app/common/widgets/card/app_card.dart';
 import 'package:neon_apps_case/app/data/models/met_object_model.dart';
 import 'package:penta_core/penta_core.dart';
 
 class MetArtworkCard extends StatelessWidget {
   const MetArtworkCard({
-    required this.metObjectModel,
+    required this.artwork,
     super.key,
-    this.height = 240,
-    this.width = 165,
+    this.height,
+    this.width,
+    this.contentPadding,
   });
 
-  final MetObjectModel metObjectModel;
-  final double height;
-  final double width;
+  final MetObjectModel artwork;
+  final double? height;
+  final double? width;
+  final double? contentPadding;
 
   @override
   Widget build(BuildContext context) {
     return AppCard(
+      onTap: () {
+        Injection.I.read<AppRouter>().push(
+          ArtworkDetailsRoute(artwork: artwork),
+        );
+      },
       width: width,
       height: height,
       child: Column(
@@ -38,37 +48,46 @@ class MetArtworkCard extends StatelessWidget {
                 ),
               ),
               child: Image.network(
-                metObjectModel.primaryImageSmall ?? '',
+                artwork.primaryImageSmall ?? '',
                 fit: BoxFit.cover,
                 errorBuilder:
                     (_, __, ___) => const Icon(Icons.photo_library_rounded),
               ),
             ),
           ),
-          AppValues.md.ext.sizedBox.vertical,
-          Text(
-            metObjectModel.title ?? 'Unknown',
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: context.ext.theme.textTheme.titleMedium?.copyWith(
-              color: context.appThemeExt.appColors.grey.dark,
-              fontWeight: FontWeight.w600,
-            ),
-          ).appWidgetExt.paddingSymmetric(horizontal: 8),
-          Text(
-            metObjectModel.artistDisplayName ?? 'Unknown',
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: context.ext.theme.textTheme.titleMedium?.copyWith(
-              color:
-                  context.appThemeExt.appColors.isabelline
-                      .byBrightness(context.ext.theme.isDark)
-                      .onColor,
-              fontWeight: FontWeight.w500,
-            ),
-          ).appWidgetExt.paddingSymmetric(horizontal: 8),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                artwork.title ?? AppStrings.unknown,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: context.ext.theme.textTheme.titleMedium?.copyWith(
+                  color: context.appThemeExt.appColors.grey.dark,
+                  fontWeight: FontWeight.w600,
+                  height: 1.1,
+                ),
+              ),
+              Text(
+                artwork.artistDisplayName ?? AppStrings.unknown,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: context.ext.theme.textTheme.titleMedium?.copyWith(
+                  color:
+                      context.appThemeExt.appColors.isabelline
+                          .byBrightness(context.ext.theme.isDark)
+                          .onColor,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ).appWidgetExt.paddingSymmetric(
+            horizontal: AppValues.sm.value,
+            vertical: contentPadding ?? AppValues.md.value,
+          ),
         ],
-      ).appWidgetExt.paddingOnly(bottom: 8),
+      ),
     );
   }
 }
