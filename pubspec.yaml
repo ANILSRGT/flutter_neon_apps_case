@@ -29,6 +29,7 @@ dependencies:
   # Serialization
   freezed_annotation: ^3.0.0
   json_annotation: ^4.9.0
+  equatable: ^2.0.7
 
   # Core
   penta_core: ^1.0.2+1

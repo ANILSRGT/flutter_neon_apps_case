@@ -5,7 +5,7 @@ class _HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dummyArtworks = List.generate(10, (index) => MetObjectModel());
+    final dummyArtworks = List.generate(10, (index) => const MetObjectModel());
     return SingleChildScrollView(
       child: SafeArea(
         child: Column(
