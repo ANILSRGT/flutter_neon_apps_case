@@ -1,9 +1,10 @@
+import 'package:neon_apps_case/app/common/cache/object_box.dart';
+import 'package:neon_apps_case/app/common/helper/batchsize_calculate.dart';
 import 'package:neon_apps_case/app/data/datasources/met_museum_local_datasource.dart';
 import 'package:neon_apps_case/app/data/datasources/met_museum_remote_datasource.dart';
 import 'package:neon_apps_case/app/domain/models/department_model.dart';
 import 'package:neon_apps_case/app/domain/models/met_object_model.dart';
 import 'package:neon_apps_case/app/domain/models/met_objects_model.dart';
-import 'package:neon_apps_case/app/domain/models/met_search_model.dart';
 import 'package:neon_apps_case/app/domain/repositories/met_museum_repo.dart';
 import 'package:neon_apps_case/injection.dart';
 import 'package:penta_core/penta_core.dart';
@@ -32,9 +33,15 @@ class MetMuseumRepoImpl extends MetMuseumRepo with DataRepoMixin {
         return ResponseModelSuccess(data: artwork);
       },
       remoteCallback: () async {
-        return Injection.I.read<MetMuseumRemoteDatasource>().getArtworkById(
-          id: id,
-        );
+        return Injection.I
+            .read<MetMuseumRemoteDatasource>()
+            .getArtworkById(id: id)
+            .then((value) {
+              if (value.isSuccess) {
+                ObjectBox.I.putMetArtwork(value.asSuccess.data);
+              }
+              return value;
+            });
       },
     );
   }
@@ -72,13 +79,21 @@ class MetMuseumRepoImpl extends MetMuseumRepo with DataRepoMixin {
         return ResponseModelSuccess(data: departments);
       },
       remoteCallback: () async {
-        return Injection.I.read<MetMuseumRemoteDatasource>().getDepartments();
+        return Injection.I
+            .read<MetMuseumRemoteDatasource>()
+            .getDepartments()
+            .then((value) {
+              if (value.isSuccess) {
+                ObjectBox.I.putDepartments(value.asSuccess.data);
+              }
+              return value;
+            });
       },
     );
   }
 
   @override
-  Future<ResponseModel<MetSearchModel>> searchArtworks({
+  Future<ResponseModel<List<MetObjectModel>>> searchArtworks({
     required String query,
     bool? isHighlight,
     bool? isOnView,
@@ -86,29 +101,54 @@ class MetMuseumRepoImpl extends MetMuseumRepo with DataRepoMixin {
     return executeByDatasource(
       localCallback: () async {
         final artworks =
-            await Injection.I.read<MetMuseumLocalDataSource>().getArtworks();
+            await Injection.I
+                .read<MetMuseumLocalDataSource>()
+                .getLastSearchArtworks();
         final searchResult =
             artworks
                 .where(
                   (artwork) =>
-                      (artwork.title?.contains(query) ?? false) ||
-                      (artwork.artistDisplayName?.contains(query) ?? false) ||
-                      (artwork.objectName?.contains(query) ?? false),
+                      ((artwork.title?.contains(query) ?? false) ||
+                          (artwork.artistDisplayName?.contains(query) ??
+                              false) ||
+                          (artwork.objectName?.contains(query) ?? false)) &&
+                      (isHighlight == null ||
+                          artwork.isHighlight == isHighlight),
                 )
                 .toList();
-        return ResponseModelSuccess(
-          data: MetSearchModel(
-            total: searchResult.length,
-            objectIDs: searchResult.map((e) => e.objectID!).toList(),
-          ),
-        );
+        return ResponseModelSuccess(data: searchResult);
       },
       remoteCallback: () async {
-        return Injection.I.read<MetMuseumRemoteDatasource>().searchArtworks(
-          query: query,
-          isHighlight: isHighlight,
-          isOnView: isOnView,
-        );
+        final res = await Injection.I
+            .read<MetMuseumRemoteDatasource>()
+            .searchArtworks(
+              query: query,
+              isHighlight: isHighlight,
+              isOnView: isOnView,
+            );
+
+        if (res.isFail) {
+          return res.asFail.castTo<List<MetObjectModel>>();
+        }
+
+        final batchSize = BatchsizeCalculate.calculate();
+        final searchResult = res.asSuccess.data.objectIDs ?? [];
+        final takeArtworks = searchResult.take(batchSize * 5).toList();
+        final searchedArtworks = <MetObjectModel>[];
+        final waitList = <Future<ResponseModel<MetObjectModel>>>[];
+        for (var i = 0; i < takeArtworks.length; i += batchSize) {
+          final batch = takeArtworks.skip(i).take(batchSize);
+          final batchResults = await Future.wait(
+            batch.map((id) => getArtworkById(id: id)),
+          );
+
+          searchedArtworks.addAll(
+            batchResults
+                .where((result) => result.isSuccess)
+                .map((result) => result.asSuccess.data),
+          );
+        }
+        return ResponseModelSuccess(data: searchedArtworks);
       },
     );
   }

@@ -55,7 +55,9 @@ class MetDepartmentCard extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                departmentModel.displayName ?? AppStrings.unknown,
+                departmentModel.displayName.ext.validation.isNullOrEmpty
+                    ? AppStrings.unknown
+                    : departmentModel.displayName!,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: context.ext.theme.textTheme.titleMedium?.copyWith(

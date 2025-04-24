@@ -3,6 +3,8 @@ import 'package:lottie/lottie.dart';
 import 'package:neon_apps_case/app/common/configs/app_strings.dart';
 import 'package:neon_apps_case/app/common/configs/enums/lotties_enum.dart';
 import 'package:neon_apps_case/app/common/configs/theme/i_app_theme.dart';
+import 'package:neon_apps_case/app/common/router/app_router.dart';
+import 'package:neon_apps_case/injection.dart';
 import 'package:penta_core/penta_core.dart';
 
 class LoadingDialog extends StatefulWidget {
@@ -11,9 +13,10 @@ class LoadingDialog extends StatefulWidget {
   final Future<void> Function() future;
 
   static Future<void> showLoadingDialog(
-    BuildContext context,
     Future<void> Function(BuildContext context) future,
-  ) {
+  ) async {
+    final context = Injection.I.read<AppRouter>().navigatorKey.currentContext;
+    if (context == null) return;
     return showDialog(
       context: context,
       barrierDismissible: false,

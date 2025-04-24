@@ -1,7 +1,7 @@
 part of '../collection_view_imports.dart';
 
-class _CollectionViewBody extends StatelessWidget {
-  const _CollectionViewBody();
+class _CollectionViewBody extends StatelessWidget with CollectionViewMixin {
+  _CollectionViewBody();
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +36,7 @@ class _CollectionViewBody extends StatelessWidget {
               focusNode: FocusNode(),
               controller: TextEditingController(),
               onSearched: (newValue) async {
-                await LoadingDialog.showLoadingDialog(context, (ctx) async {
-                  await Future.delayed(const Duration(seconds: 2), () {});
-                  await Injection.I.read<AppRouter>().popAndPush(
-                    const SearchCollectionRoute(),
-                  );
-                });
+                debouncer.call(newValue);
               },
             ).appWidgetExt.paddingSymmetric(horizontal: AppValues.xl.value),
             AppValues.xl2.ext.sizedBox.vertical,

@@ -10,7 +10,7 @@ class SeeAllView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(title: title),
+      appBar: CustomAppbar(isBackButtonVisible: true, title: title),
       body: ListView.separated(
         padding: AppValues.xl.ext.padding.horizontal,
         itemCount: items.length,

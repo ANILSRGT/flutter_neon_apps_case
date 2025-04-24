@@ -6,9 +6,14 @@ import 'package:neon_apps_case/injection.dart';
 import 'package:penta_core/penta_core.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppbar({required this.title, super.key});
+  const CustomAppbar({
+    required this.title,
+    this.isBackButtonVisible = false,
+    super.key,
+  });
 
   final String title;
+  final bool isBackButtonVisible;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(title),
       leadingWidth: 63,
       leading:
-          Injection.I.read<AppRouter>().canPop()
+          isBackButtonVisible
               ? IconButton(
                 icon: IconsEnum.btnBack.toAssetImage(
                   color:

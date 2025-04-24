@@ -26,8 +26,10 @@ class MetMuseumRemoteDatasourceImpl implements MetMuseumRemoteDatasource {
     required int id,
   }) async {
     final url = 'objects/$id';
-    return _dio.get<MetObjectModel>(url).then((response) {
+    try {
+      final response = await _dio.get<Map<String, dynamic>>(url);
       final data = response.data;
+
       if (data == null || response.statusCode != 200) {
         return ResponseModelFail(
           error: ErrorModel(
@@ -38,15 +40,24 @@ class MetMuseumRemoteDatasourceImpl implements MetMuseumRemoteDatasource {
         );
       }
 
-      return ResponseModelSuccess(data: data);
-    });
+      return ResponseModelSuccess(data: MetObjectModel.fromJson(data));
+    } on Exception catch (e) {
+      return ResponseModelFail(
+        error: ErrorModel(
+          message: 'An error occurred while loading artwork!',
+          throwMessage: 'MetMuseumRemoteDatasourceImpl.getArtworkById: $e',
+        ),
+      );
+    }
   }
 
   @override
   Future<ResponseModel<MetObjectsModel>> getArtworks() async {
     const url = 'objects';
-    return _dio.get<MetObjectsModel>(url).then((response) {
+    try {
+      final response = await _dio.get<Map<String, dynamic>>(url);
       final data = response.data;
+
       if (data == null || response.statusCode != 200) {
         return ResponseModelFail(
           error: ErrorModel(
@@ -57,15 +68,24 @@ class MetMuseumRemoteDatasourceImpl implements MetMuseumRemoteDatasource {
         );
       }
 
-      return ResponseModelSuccess(data: data);
-    });
+      return ResponseModelSuccess(data: MetObjectsModel.fromJson(data));
+    } on Exception catch (e) {
+      return ResponseModelFail(
+        error: ErrorModel(
+          message: 'An error occurred while loading artworks!',
+          throwMessage: 'MetMuseumRemoteDatasourceImpl.getArtworks: $e',
+        ),
+      );
+    }
   }
 
   @override
   Future<ResponseModel<List<DepartmentModel>>> getDepartments() async {
     const url = 'departments';
-    return _dio.get<Map<String, dynamic>>(url).then((response) {
+    try {
+      final response = await _dio.get<Map<String, dynamic>>(url);
       final data = response.data;
+
       if (data == null || response.statusCode != 200) {
         return ResponseModelFail(
           error: ErrorModel(
@@ -77,7 +97,14 @@ class MetMuseumRemoteDatasourceImpl implements MetMuseumRemoteDatasource {
       }
 
       return ResponseModelSuccess(data: DepartmentModel.fromJsonList(data));
-    });
+    } on Exception catch (e) {
+      return ResponseModelFail(
+        error: ErrorModel(
+          message: 'An error occurred while loading departments!',
+          throwMessage: 'MetMuseumRemoteDatasourceImpl.getDepartments: $e',
+        ),
+      );
+    }
   }
 
   @override
@@ -93,10 +120,13 @@ class MetMuseumRemoteDatasourceImpl implements MetMuseumRemoteDatasource {
       if (isHighlight != null) 'isHighlight': isHighlight,
       if (isOnView != null) 'isOnView': isOnView,
     };
-    return _dio.get<MetSearchModel>(url, queryParameters: params).then((
-      response,
-    ) {
+    try {
+      final response = await _dio.get<Map<String, dynamic>>(
+        url,
+        queryParameters: params,
+      );
       final data = response.data;
+
       if (data == null || response.statusCode != 200) {
         return ResponseModelFail(
           error: ErrorModel(
@@ -107,7 +137,14 @@ class MetMuseumRemoteDatasourceImpl implements MetMuseumRemoteDatasource {
         );
       }
 
-      return ResponseModelSuccess(data: data);
-    });
+      return ResponseModelSuccess(data: MetSearchModel.fromJson(data));
+    } on Exception catch (e) {
+      return ResponseModelFail(
+        error: ErrorModel(
+          message: 'An error occurred while searching artworks!',
+          throwMessage: 'MetMuseumRemoteDatasourceImpl.searchArtworks: $e',
+        ),
+      );
+    }
   }
 }

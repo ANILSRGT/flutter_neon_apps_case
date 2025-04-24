@@ -24,7 +24,7 @@ class AppImage extends StatelessWidget {
     Color? builderIconColor,
   }) {
     return AppImage._(
-      image: CachedNetworkImageProvider(url),
+      image: CachedNetworkImageProvider(url, cacheKey: url),
       height: height,
       width: width,
       fit: fit,

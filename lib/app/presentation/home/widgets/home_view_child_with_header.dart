@@ -54,6 +54,7 @@ class _HomeViewChildWithHeader extends StatelessWidget {
               return AppValues.xl2.ext.sizedBox.horizontal;
             },
             itemBuilder: (_, index) {
+              return MetArtworkCard.shimmer(width: 200);
               return MetArtworkCard(width: 200, artwork: artworks[index]);
             },
           ),

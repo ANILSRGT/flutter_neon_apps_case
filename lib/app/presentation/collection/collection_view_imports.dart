@@ -11,8 +11,11 @@ import 'package:neon_apps_case/app/common/widgets/card/met_department_card.dart'
 import 'package:neon_apps_case/app/common/widgets/dialogs/loading_dialog.dart';
 import 'package:neon_apps_case/app/common/widgets/text_form_field/app_text_form_field.dart';
 import 'package:neon_apps_case/app/domain/models/department_model.dart';
+import 'package:neon_apps_case/app/domain/repositories/met_museum_repo.dart';
 import 'package:neon_apps_case/injection.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:penta_core/penta_core.dart';
 
 part 'view/collection_view.dart';
+part 'mixin/collection_view_mixin.dart';
 part 'widgets/collection_view_body.dart';

@@ -113,18 +113,39 @@ class MainRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [SearchCollectionView]
-class SearchCollectionRoute extends PageRouteInfo<void> {
-  const SearchCollectionRoute({List<PageRouteInfo>? children})
-    : super(SearchCollectionRoute.name, initialChildren: children);
+class SearchCollectionRoute extends PageRouteInfo<SearchCollectionRouteArgs> {
+  SearchCollectionRoute({
+    required List<MetObjectModel> artworks,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         SearchCollectionRoute.name,
+         args: SearchCollectionRouteArgs(artworks: artworks, key: key),
+         initialChildren: children,
+       );
 
   static const String name = 'SearchCollectionRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const SearchCollectionView();
+      final args = data.argsAs<SearchCollectionRouteArgs>();
+      return SearchCollectionView(artworks: args.artworks, key: args.key);
     },
   );
+}
+
+class SearchCollectionRouteArgs {
+  const SearchCollectionRouteArgs({required this.artworks, this.key});
+
+  final List<MetObjectModel> artworks;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'SearchCollectionRouteArgs{artworks: $artworks, key: $key}';
+  }
 }
 
 /// generated route for
