@@ -23,7 +23,7 @@ class _MainViewBottomNavBarItem extends StatelessWidget {
           return Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
-            spacing: AppValues.xs.value,
+            spacing: AppValues.xs.value / 2,
             children: [
               Expanded(child: icon(state.currentIndex == index)),
               if (label != null)

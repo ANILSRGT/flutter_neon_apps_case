@@ -29,10 +29,8 @@ class _MainViewBottomNavBar extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
-                    bottom: 25,
-                    left: 0,
-                    right: 0,
+                  Align(
+                    alignment: Alignment.center - const Alignment(0, 1.5),
                     child: Container(
                       width: 70,
                       height: 70,
@@ -62,9 +60,10 @@ class _MainViewBottomNavBar extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    left: cst.maxWidth / 7,
+                    left: 5,
                     top: 25,
                     bottom: 15,
+                    width: cst.maxWidth / 2 - 55,
                     child: _MainViewBottomNavBarItem(
                       index: 0,
                       icon:
@@ -77,9 +76,10 @@ class _MainViewBottomNavBar extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    right: cst.maxWidth / 7,
+                    right: 5,
                     top: 25,
                     bottom: 15,
+                    width: cst.maxWidth / 2 - 55,
                     child: _MainViewBottomNavBarItem(
                       index: 2,
                       icon:
