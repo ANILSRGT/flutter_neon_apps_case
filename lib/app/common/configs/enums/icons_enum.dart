@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neon_apps_case/app/common/configs/enums/image_sizes_enum.dart';
+import 'package:neon_apps_case/app/common/widgets/image/app_image.dart';
 
 enum IconsEnum {
   btnBack('btn_back'),
@@ -24,24 +25,19 @@ enum IconsEnum {
         ImageSizesEnum.x3 => '@3x',
       }}.png';
 
-  Image toAssetImage({
+  Widget toAssetImage({
     double? width,
     double? height,
     BoxFit fit = BoxFit.contain,
     ImageSizesEnum size = ImageSizesEnum.x,
     Color? color,
   }) {
-    return Image.asset(
-      path(size: size),
+    return AppImage.asset(
+      path: path(size: size),
       width: width,
       height: height,
       fit: fit,
       color: color,
-      errorBuilder: (_, __, ___) => const Icon(Icons.photo_library_outlined),
     );
-  }
-
-  ImageProvider toImageProvider({ImageSizesEnum size = ImageSizesEnum.x}) {
-    return AssetImage(path(size: size));
   }
 }

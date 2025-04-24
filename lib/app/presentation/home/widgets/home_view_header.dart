@@ -26,7 +26,7 @@ class _HomeViewHeader extends StatelessWidget {
                 ),
               ),
               AppButton.normal(
-                onPressed: () {},
+                onPressed: () => context.read<MainViewCubit>().changePage(1),
                 text: AppStrings.homeExploreCollectionButton,
               ),
             ],

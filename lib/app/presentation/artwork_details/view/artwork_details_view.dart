@@ -24,18 +24,17 @@ class ArtworkDetailsView extends StatelessWidget {
                         .byBrightness(context.ext.theme.isDark),
                     borderRadius: AppValues.md.ext.radius.border.all,
                   ),
-                  child: Image.network(
-                    artwork.primaryImage != null
-                        ? artwork.primaryImage!
-                        : artwork.primaryImageSmall != null
-                        ? artwork.primaryImageSmall!
-                        : (artwork.additionalImages != null &&
-                            artwork.additionalImages!.isNotEmpty)
-                        ? artwork.additionalImages!.first
-                        : '',
+                  child: AppImage.network(
+                    url:
+                        artwork.primaryImage != null
+                            ? artwork.primaryImage!
+                            : artwork.primaryImageSmall != null
+                            ? artwork.primaryImageSmall!
+                            : (artwork.additionalImages != null &&
+                                artwork.additionalImages!.isNotEmpty)
+                            ? artwork.additionalImages!.first
+                            : '',
                     fit: BoxFit.fitWidth,
-                    errorBuilder:
-                        (_, __, ___) => const Icon(Icons.photo_library_rounded),
                   ),
                 ),
                 AppValues.lg.ext.sizedBox.vertical,
@@ -52,7 +51,13 @@ class ArtworkDetailsView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 spacing: AppValues.lg.value,
                 children: [
-                  const Text(AppStrings.artworkDetailsDetailsHeader),
+                  Text(
+                    AppStrings.artworkDetailsDetailsHeader,
+                    style: context.ext.theme.textTheme.titleLarge?.copyWith(
+                      letterSpacing: 0.8,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                   DetailText(
                     title: AppStrings.artworkDetailsTitleHeader,
                     content: artwork.title ?? AppStrings.unknown,

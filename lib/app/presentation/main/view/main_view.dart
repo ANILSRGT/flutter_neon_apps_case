@@ -6,13 +6,10 @@ class MainView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => MainViewCubit(),
-      child: const Scaffold(
-        extendBody: true,
-        bottomNavigationBar: _MainViewBottomNavBar(),
-        body: _MainViewBody(),
-      ),
+    return const Scaffold(
+      extendBody: true,
+      bottomNavigationBar: _MainViewBottomNavBar(),
+      body: _MainViewBody(),
     );
   }
 }

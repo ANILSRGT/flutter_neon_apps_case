@@ -1,0 +1,459 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:3400714561225318792",
+      "lastPropertyId": "7:6742092208559707318",
+      "name": "ConstituentModel",
+      "properties": [
+        {
+          "id": "1:858975680881863978",
+          "name": "localId",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:8237019104780005696",
+          "name": "constituentID",
+          "type": 6,
+          "flags": 40,
+          "indexId": "1:1373779809912196333"
+        },
+        {
+          "id": "3:5956796505865141312",
+          "name": "role",
+          "type": 9
+        },
+        {
+          "id": "4:7278609737335619156",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "5:8039553281109507225",
+          "name": "constituentULAN_URL",
+          "type": 9
+        },
+        {
+          "id": "6:5356279481757997731",
+          "name": "constituentWikidata_URL",
+          "type": 9
+        },
+        {
+          "id": "7:6742092208559707318",
+          "name": "gender",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:2017232906959307735",
+      "lastPropertyId": "3:6606663235365601968",
+      "name": "DepartmentModel",
+      "properties": [
+        {
+          "id": "1:8541190894936816049",
+          "name": "localId",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:701757342209485310",
+          "name": "departmentId",
+          "type": 6,
+          "flags": 40,
+          "indexId": "2:8991154616135570840"
+        },
+        {
+          "id": "3:6606663235365601968",
+          "name": "displayName",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:19295087172538908",
+      "lastPropertyId": "60:5701104902068035473",
+      "name": "MetObjectModel",
+      "properties": [
+        {
+          "id": "1:8569725401443730600",
+          "name": "localId",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "7:8850949076857509868",
+          "name": "objectID",
+          "type": 6,
+          "flags": 40,
+          "indexId": "3:3179128287111313662"
+        },
+        {
+          "id": "8:1246064221375210085",
+          "name": "isHighlight",
+          "type": 1
+        },
+        {
+          "id": "9:8213906074285237094",
+          "name": "accessionNumber",
+          "type": 9
+        },
+        {
+          "id": "10:6859476580885186205",
+          "name": "accessionYear",
+          "type": 9
+        },
+        {
+          "id": "11:2863433460750639516",
+          "name": "isPublicDomain",
+          "type": 1
+        },
+        {
+          "id": "12:6433358298605640735",
+          "name": "primaryImage",
+          "type": 9
+        },
+        {
+          "id": "13:4293914097721769077",
+          "name": "primaryImageSmall",
+          "type": 9
+        },
+        {
+          "id": "14:3256089201836234279",
+          "name": "department",
+          "type": 9
+        },
+        {
+          "id": "15:637964750654815158",
+          "name": "objectName",
+          "type": 9
+        },
+        {
+          "id": "16:1899876831774155794",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "17:4811149886337009590",
+          "name": "culture",
+          "type": 9
+        },
+        {
+          "id": "18:6740526318252105467",
+          "name": "period",
+          "type": 9
+        },
+        {
+          "id": "19:8044872882981247106",
+          "name": "dynasty",
+          "type": 9
+        },
+        {
+          "id": "20:6476533786178793329",
+          "name": "reign",
+          "type": 9
+        },
+        {
+          "id": "21:4009007414335140044",
+          "name": "portfolio",
+          "type": 9
+        },
+        {
+          "id": "22:6392013296145334445",
+          "name": "artistRole",
+          "type": 9
+        },
+        {
+          "id": "23:2884723141305536276",
+          "name": "artistPrefix",
+          "type": 9
+        },
+        {
+          "id": "24:5319770070037076244",
+          "name": "artistDisplayName",
+          "type": 9
+        },
+        {
+          "id": "25:4019410566082311519",
+          "name": "artistDisplayBio",
+          "type": 9
+        },
+        {
+          "id": "26:4335234831674141135",
+          "name": "artistSuffix",
+          "type": 9
+        },
+        {
+          "id": "27:5647166127784092549",
+          "name": "artistAlphaSort",
+          "type": 9
+        },
+        {
+          "id": "28:1187120522440611822",
+          "name": "artistNationality",
+          "type": 9
+        },
+        {
+          "id": "29:8148573156435617529",
+          "name": "artistBeginDate",
+          "type": 9
+        },
+        {
+          "id": "30:4357208173911038043",
+          "name": "artistEndDate",
+          "type": 9
+        },
+        {
+          "id": "31:6978906066991072685",
+          "name": "artistGender",
+          "type": 9
+        },
+        {
+          "id": "32:3530031925565100705",
+          "name": "artistWikidata_URL",
+          "type": 9
+        },
+        {
+          "id": "33:5832238431538768849",
+          "name": "artistULAN_URL",
+          "type": 9
+        },
+        {
+          "id": "34:1310119803142339162",
+          "name": "objectDate",
+          "type": 9
+        },
+        {
+          "id": "35:5146826989315782371",
+          "name": "objectBeginDate",
+          "type": 6
+        },
+        {
+          "id": "36:4150914306655671306",
+          "name": "objectEndDate",
+          "type": 6
+        },
+        {
+          "id": "37:2939317850475430262",
+          "name": "medium",
+          "type": 9
+        },
+        {
+          "id": "38:8599000166281998703",
+          "name": "dimensions",
+          "type": 9
+        },
+        {
+          "id": "39:5586774522521688518",
+          "name": "creditLine",
+          "type": 9
+        },
+        {
+          "id": "40:580341848290219887",
+          "name": "geographyType",
+          "type": 9
+        },
+        {
+          "id": "41:1462948432387207943",
+          "name": "city",
+          "type": 9
+        },
+        {
+          "id": "42:2607318294896336595",
+          "name": "state",
+          "type": 9
+        },
+        {
+          "id": "43:5875479300022449377",
+          "name": "county",
+          "type": 9
+        },
+        {
+          "id": "44:8506085945349974153",
+          "name": "country",
+          "type": 9
+        },
+        {
+          "id": "45:932744581821698503",
+          "name": "region",
+          "type": 9
+        },
+        {
+          "id": "46:2773964459891023578",
+          "name": "subregion",
+          "type": 9
+        },
+        {
+          "id": "47:1075038469112752830",
+          "name": "locale",
+          "type": 9
+        },
+        {
+          "id": "48:3991533356564768474",
+          "name": "locus",
+          "type": 9
+        },
+        {
+          "id": "49:402580704301922287",
+          "name": "excavation",
+          "type": 9
+        },
+        {
+          "id": "50:6216360871538881033",
+          "name": "river",
+          "type": 9
+        },
+        {
+          "id": "51:5805209746523616137",
+          "name": "classification",
+          "type": 9
+        },
+        {
+          "id": "52:3015286402635989773",
+          "name": "rightsAndReproduction",
+          "type": 9
+        },
+        {
+          "id": "53:3800532520952911700",
+          "name": "linkResource",
+          "type": 9
+        },
+        {
+          "id": "54:4285008714072584125",
+          "name": "metadataDate",
+          "type": 9
+        },
+        {
+          "id": "55:6177549352100240724",
+          "name": "repository",
+          "type": 9
+        },
+        {
+          "id": "56:2174491260470893428",
+          "name": "objectURL",
+          "type": 9
+        },
+        {
+          "id": "57:874218396473967476",
+          "name": "objectWikidata_URL",
+          "type": 9
+        },
+        {
+          "id": "58:1329041339845301288",
+          "name": "isTimelineWork",
+          "type": 1
+        },
+        {
+          "id": "59:142233467445303399",
+          "name": "GalleryNumber",
+          "type": 9
+        },
+        {
+          "id": "60:5701104902068035473",
+          "name": "additionalImages",
+          "type": 30
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:6944301132044813922",
+      "lastPropertyId": "3:3472402247435446785",
+      "name": "MetObjectsModel",
+      "properties": [
+        {
+          "id": "1:8118930839328507605",
+          "name": "localId",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:2476488723680415028",
+          "name": "total",
+          "type": 6
+        },
+        {
+          "id": "3:3472402247435446785",
+          "name": "objectIDs",
+          "type": 27
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:7580681416297406572",
+      "lastPropertyId": "3:812520298563810270",
+      "name": "MetSearchModel",
+      "properties": [
+        {
+          "id": "1:8793896173728037508",
+          "name": "localId",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:6130821190851805672",
+          "name": "total",
+          "type": 6
+        },
+        {
+          "id": "3:812520298563810270",
+          "name": "objectIDs",
+          "type": 27
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "6:459039736759376053",
+      "lastPropertyId": "4:5620579902502729408",
+      "name": "TagModel",
+      "properties": [
+        {
+          "id": "1:4125473571380684443",
+          "name": "localId",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:5008789740849911007",
+          "name": "term",
+          "type": 9
+        },
+        {
+          "id": "3:5432938675064905967",
+          "name": "AAT_URL",
+          "type": 9
+        },
+        {
+          "id": "4:5620579902502729408",
+          "name": "Wikidata_URL",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "6:459039736759376053",
+  "lastIndexId": "3:3179128287111313662",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    6923034305603945876,
+    6838816279598050857,
+    4006036810968550409,
+    8239150226732372093,
+    4095372112770032433
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

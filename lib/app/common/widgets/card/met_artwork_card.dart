@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:neon_apps_case/app/common/configs/app_strings.dart';
 import 'package:neon_apps_case/app/common/configs/theme/i_app_theme.dart';
 import 'package:neon_apps_case/app/common/extensions/widget_ext.dart';
-import 'package:neon_apps_case/app/common/injections/injection.dart';
 import 'package:neon_apps_case/app/common/router/app_router.dart';
 import 'package:neon_apps_case/app/common/widgets/card/app_card.dart';
-import 'package:neon_apps_case/app/data/models/met_object_model.dart';
+import 'package:neon_apps_case/app/common/widgets/image/app_image.dart';
+import 'package:neon_apps_case/app/domain/models/met_object_model.dart';
+import 'package:neon_apps_case/injection.dart';
 import 'package:penta_core/penta_core.dart';
 
 class MetArtworkCard extends StatelessWidget {
@@ -47,11 +48,9 @@ class MetArtworkCard extends StatelessWidget {
                   ),
                 ),
               ),
-              child: Image.network(
-                artwork.primaryImageSmall ?? '',
+              child: AppImage.network(
+                url: artwork.primaryImageSmall ?? '',
                 fit: BoxFit.cover,
-                errorBuilder:
-                    (_, __, ___) => const Icon(Icons.photo_library_rounded),
               ),
             ),
           ),

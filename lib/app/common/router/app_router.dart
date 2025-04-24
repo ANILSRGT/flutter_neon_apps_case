@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:neon_apps_case/app/data/models/met_object_model.dart';
+import 'package:neon_apps_case/app/domain/models/met_object_model.dart';
 import 'package:neon_apps_case/app/presentation/artwork_details/artwork_details_view_imports.dart';
 import 'package:neon_apps_case/app/presentation/collection/collection_view_imports.dart';
 import 'package:neon_apps_case/app/presentation/home/home_view_imports.dart';
