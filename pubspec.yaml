@@ -37,13 +37,17 @@ dependencies:
   json_annotation: ^4.9.0
   equatable: ^2.0.7
 
-  # Utils
-  flutter_dotenv: ^5.2.1
-  path: ^1.9.1
-  path_provider: ^2.1.5
+  # Notifications
   flutter_local_notifications: ^19.1.0
   timezone: ^0.10.0
   flutter_timezone: ^4.1.0
+
+  # Path
+  path: ^1.9.1
+  path_provider: ^2.1.5
+
+  # Environment Variables
+  flutter_dotenv: ^5.2.1
 
   # Core
   penta_core: ^1.0.2+1
