@@ -15,9 +15,9 @@ final class DailyArtworkNotificationService {
         await Injection.I.read<MetMuseumRepo>().getDepartments();
     if (departmentRes.isFail) return;
     final departments = departmentRes.asSuccess.data;
+    if (departments.isEmpty) return;
     final random = math.Random();
-    final randomDepartment =
-        departments[random.nextInt(departments.length - 1)];
+    final randomDepartment = departments[random.nextInt(departments.length)];
     await NotificationService.I.scheduleDailyNotification(
       title: randomDepartment.displayName,
       body: 'Explore the ${randomDepartment.displayName} department!',

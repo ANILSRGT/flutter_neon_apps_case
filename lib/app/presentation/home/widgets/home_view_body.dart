@@ -5,7 +5,6 @@ class _HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dummyArtworks = List.generate(10, (index) => const MetObjectModel());
     return SingleChildScrollView(
       child: SafeArea(
         child: Column(
@@ -18,12 +17,15 @@ class _HomeViewBody extends StatelessWidget {
             AppValues.xl2.ext.sizedBox.vertical,
             _HomeViewChildWithHeader(
               header: AppStrings.homeCurrentExhibitionsHeader,
-              artworks: dummyArtworks,
+              artworkIds:
+                  context.watch<HomeCubit>().state.exhibitionsArtworksIds,
+              artworks: context.watch<HomeCubit>().state.exhibitionsArtworks,
             ),
             AppValues.xl2.ext.sizedBox.vertical,
             _HomeViewChildWithHeader(
               header: AppStrings.homeFamousArtworksHeader,
-              artworks: dummyArtworks,
+              artworkIds: context.watch<HomeCubit>().state.famousArtworksIds,
+              artworks: context.watch<HomeCubit>().state.famousArtworks,
             ),
             AppValues.xl.ext.sizedBox.vertical,
           ],

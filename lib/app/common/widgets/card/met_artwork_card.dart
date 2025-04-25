@@ -36,6 +36,20 @@ class MetArtworkCard extends StatelessWidget {
     );
   }
 
+  static _MetArtworkCardError error({
+    required String error,
+    double? height,
+    double? width,
+    double? contentPadding,
+  }) {
+    return _MetArtworkCardError(
+      error: error,
+      height: height,
+      width: width,
+      contentPadding: contentPadding,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final image =
@@ -117,6 +131,52 @@ class MetArtworkCard extends StatelessWidget {
   }
 }
 
+class _MetArtworkCardError extends StatelessWidget {
+  const _MetArtworkCardError({
+    required this.error,
+    this.height,
+    this.width,
+    this.contentPadding,
+  });
+
+  final String error;
+  final double? height;
+  final double? width;
+  final double? contentPadding;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppCard(
+      width: width,
+      height: height,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: context.appThemeExt.appColors.grey.light.withValues(
+                      alpha: 0.2,
+                    ),
+                    width: 0.5,
+                  ),
+                ),
+              ),
+              child: Center(child: Text(error)),
+            ),
+          ),
+        ],
+      ).appWidgetExt.paddingSymmetric(
+        horizontal: AppValues.sm.value,
+        vertical: contentPadding ?? AppValues.md.value,
+      ),
+    );
+  }
+}
+
 class _ShimmerMetArtworkCard extends StatelessWidget {
   const _ShimmerMetArtworkCard({this.height, this.width, this.contentPadding});
 
@@ -141,7 +201,6 @@ class _ShimmerMetArtworkCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Image placeholder
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
@@ -167,14 +226,12 @@ class _ShimmerMetArtworkCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  // Title
                   Container(
                     height: 16,
                     width: double.infinity,
                     color: Colors.white,
                   ),
                   const SizedBox(height: 8),
-                  // Artist
                   Container(height: 14, width: 100, color: Colors.white),
                 ],
               ),

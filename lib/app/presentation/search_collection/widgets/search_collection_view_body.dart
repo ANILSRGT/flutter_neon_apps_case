@@ -5,8 +5,12 @@ class _SearchCollectionViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final artworksIds = context.watch<SearchViewCubit>().state.artworksIds;
     final artworks = context.watch<SearchViewCubit>().state.artworks;
+    final maxArtworks = context.watch<SearchViewCubit>().state.maxArtworks;
     return SingleChildScrollView(
+      controller: context.read<SearchViewCubit>().scrollController,
+      physics: const BouncingScrollPhysics(),
       padding: AppValues.xl.ext.padding.horizontal,
       child: SafeArea(
         child: Column(
@@ -21,23 +25,49 @@ class _SearchCollectionViewBody extends StatelessWidget {
               },
             ),
             AppValues.xl.ext.sizedBox.vertical,
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: artworks?.length ?? 6,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: context.ext.screen.width ~/ 180,
-                childAspectRatio: 0.6,
-                crossAxisSpacing: AppValues.xl.value,
-                mainAxisSpacing: AppValues.xl.value,
+            if (artworksIds == null)
+              if (artworks.isNotEmpty)
+                const Text('No artworks found!')
+              else
+                ColorFiltered(
+                  colorFilter: ColorFilter.mode(
+                    context.appThemeExt.appColors.background
+                        .byBrightness(context.ext.theme.isDark)
+                        .onColor,
+                    BlendMode.srcATop,
+                  ),
+                  child: Lottie.asset(
+                    LottiesEnum.loading.path,
+                    width: 100,
+                    height: 100,
+                  ),
+                )
+            else
+              GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: maxArtworks,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: context.ext.screen.width ~/ 180,
+                  childAspectRatio: 0.6,
+                  crossAxisSpacing: AppValues.xl.value,
+                  mainAxisSpacing: AppValues.xl.value,
+                ),
+                itemBuilder: (_, index) {
+                  if (artworks.length <= index) {
+                    return MetArtworkCard.shimmer();
+                  }
+                  final artworkId = artworksIds[index];
+                  final artwork = artworks[artworkId];
+                  return artwork == null
+                      ? MetArtworkCard.shimmer()
+                      : artwork.isFail
+                      ? MetArtworkCard.error(
+                        error: artwork.asFail.error.message,
+                      )
+                      : MetArtworkCard(artwork: artwork.asSuccess.data);
+                },
               ),
-              itemBuilder: (_, index) {
-                final artwork = artworks?[index];
-                return artwork != null
-                    ? MetArtworkCard(artwork: artwork)
-                    : MetArtworkCard.shimmer();
-              },
-            ),
           ],
         ),
       ),

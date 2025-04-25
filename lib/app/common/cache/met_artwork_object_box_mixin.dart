@@ -21,10 +21,7 @@ mixin MetArtworkObjectBoxMixin {
       );
       return;
     } else {
-      _metArtworkBox.put(
-        metArtwork.copyWith(localId: metArtwork.objectID),
-        mode: PutMode.insert,
-      );
+      _metArtworkBox.put(metArtwork.copyWith(localId: metArtwork.objectID));
     }
   }
 
@@ -45,7 +42,7 @@ mixin MetArtworkObjectBoxMixin {
             .map((artwork) => artwork.copyWith(localId: artwork.objectID))
             .toList();
     if (newArtworks.isNotEmpty) {
-      _metArtworkBox.putMany(newArtworks, mode: PutMode.insert);
+      _metArtworkBox.putMany(newArtworks);
     }
     if (existingArtworkIds.isNotEmpty) {
       _metArtworkBox.putMany(

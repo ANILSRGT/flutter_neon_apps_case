@@ -38,8 +38,14 @@ class CollectionViewCubit extends Cubit<CollectionViewState> {
         Injection.I.read<AppRouter>().pop();
         return;
       }
+      final artworksIds = res.asSuccess.data.objectIDs;
+      if (artworksIds == null || artworksIds.isEmpty) {
+        showToast('No artworks found!');
+        Injection.I.read<AppRouter>().pop();
+        return;
+      }
       await Injection.I.read<AppRouter>().popAndPush(
-        SearchCollectionRoute(artworks: res.asSuccess.data),
+        SearchCollectionRoute(artworksIds: artworksIds),
       );
     });
   }

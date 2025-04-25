@@ -115,12 +115,12 @@ class MainRoute extends PageRouteInfo<void> {
 /// [SearchCollectionView]
 class SearchCollectionRoute extends PageRouteInfo<SearchCollectionRouteArgs> {
   SearchCollectionRoute({
-    required List<MetObjectModel> artworks,
+    required List<int> artworksIds,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
          SearchCollectionRoute.name,
-         args: SearchCollectionRouteArgs(artworks: artworks, key: key),
+         args: SearchCollectionRouteArgs(artworksIds: artworksIds, key: key),
          initialChildren: children,
        );
 
@@ -130,21 +130,21 @@ class SearchCollectionRoute extends PageRouteInfo<SearchCollectionRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<SearchCollectionRouteArgs>();
-      return SearchCollectionView(artworks: args.artworks, key: args.key);
+      return SearchCollectionView(artworksIds: args.artworksIds, key: args.key);
     },
   );
 }
 
 class SearchCollectionRouteArgs {
-  const SearchCollectionRouteArgs({required this.artworks, this.key});
+  const SearchCollectionRouteArgs({required this.artworksIds, this.key});
 
-  final List<MetObjectModel> artworks;
+  final List<int> artworksIds;
 
   final Key? key;
 
   @override
   String toString() {
-    return 'SearchCollectionRouteArgs{artworks: $artworks, key: $key}';
+    return 'SearchCollectionRouteArgs{artworksIds: $artworksIds, key: $key}';
   }
 }
 
@@ -153,12 +153,12 @@ class SearchCollectionRouteArgs {
 class SeeAllRoute extends PageRouteInfo<SeeAllRouteArgs> {
   SeeAllRoute({
     required String title,
-    required List<MetObjectModel> items,
+    required List<int> artworkIds,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
          SeeAllRoute.name,
-         args: SeeAllRouteArgs(title: title, items: items, key: key),
+         args: SeeAllRouteArgs(title: title, artworkIds: artworkIds, key: key),
          initialChildren: children,
        );
 
@@ -168,22 +168,30 @@ class SeeAllRoute extends PageRouteInfo<SeeAllRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<SeeAllRouteArgs>();
-      return SeeAllView(title: args.title, items: args.items, key: args.key);
+      return SeeAllView(
+        title: args.title,
+        artworkIds: args.artworkIds,
+        key: args.key,
+      );
     },
   );
 }
 
 class SeeAllRouteArgs {
-  const SeeAllRouteArgs({required this.title, required this.items, this.key});
+  const SeeAllRouteArgs({
+    required this.title,
+    required this.artworkIds,
+    this.key,
+  });
 
   final String title;
 
-  final List<MetObjectModel> items;
+  final List<int> artworkIds;
 
   final Key? key;
 
   @override
   String toString() {
-    return 'SeeAllRouteArgs{title: $title, items: $items, key: $key}';
+    return 'SeeAllRouteArgs{title: $title, artworkIds: $artworkIds, key: $key}';
   }
 }

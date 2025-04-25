@@ -1,9 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 import 'package:neon_apps_case/app/common/configs/app_strings.dart';
 import 'package:neon_apps_case/app/common/configs/enums/icons_enum.dart';
 import 'package:neon_apps_case/app/common/configs/enums/images_enum.dart';
+import 'package:neon_apps_case/app/common/configs/enums/lotties_enum.dart';
 import 'package:neon_apps_case/app/common/configs/theme/i_app_theme.dart';
 import 'package:neon_apps_case/app/common/extensions/widget_ext.dart';
 import 'package:neon_apps_case/app/common/router/app_router.dart';
@@ -12,8 +14,10 @@ import 'package:neon_apps_case/app/common/widgets/card/met_artwork_card.dart';
 import 'package:neon_apps_case/app/common/widgets/logo/app_logo.dart';
 import 'package:neon_apps_case/app/common/widgets/text/header_text.dart';
 import 'package:neon_apps_case/app/domain/models/met_object_model.dart';
+import 'package:neon_apps_case/app/presentation/home/cubit/home_cubit.dart';
 import 'package:neon_apps_case/app/presentation/main/cubit/main_view_cubit.dart';
 import 'package:neon_apps_case/injection.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:penta_core/penta_core.dart';
 
 part 'view/home_view.dart';

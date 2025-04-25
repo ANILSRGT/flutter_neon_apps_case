@@ -3,11 +3,13 @@ part of '../home_view_imports.dart';
 class _HomeViewChildWithHeader extends StatelessWidget {
   const _HomeViewChildWithHeader({
     required this.header,
+    required this.artworkIds,
     required this.artworks,
   });
 
   final String header;
-  final List<MetObjectModel> artworks;
+  final List<int>? artworkIds;
+  final Map<int, ResponseModel<MetObjectModel>> artworks;
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +25,12 @@ class _HomeViewChildWithHeader extends StatelessWidget {
             ).appWidgetExt.paddingOnly(left: AppValues.xs.value),
             GestureDetector(
               onTap: () {
+                if (artworkIds == null) {
+                  showToast('No artworks found!');
+                  return;
+                }
                 Injection.I.read<AppRouter>().push(
-                  SeeAllRoute(title: header, items: artworks),
+                  SeeAllRoute(title: header, artworkIds: artworkIds!),
                 );
               },
               behavior: HitTestBehavior.translucent,
@@ -44,21 +50,53 @@ class _HomeViewChildWithHeader extends StatelessWidget {
           ],
         ).appWidgetExt.paddingSymmetric(horizontal: AppValues.xl.value),
         AppValues.lg.ext.sizedBox.vertical,
-        SizedBox(
-          height: 310,
-          child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            padding: AppValues.xl.ext.padding.horizontal,
-            itemCount: artworks.length,
-            separatorBuilder: (_, index) {
-              return AppValues.xl2.ext.sizedBox.horizontal;
-            },
-            itemBuilder: (_, index) {
-              return MetArtworkCard.shimmer(width: 200);
-              return MetArtworkCard(width: 200, artwork: artworks[index]);
-            },
+        if (artworkIds == null)
+          if (artworks.isNotEmpty)
+            const Text('No artworks found!')
+          else
+            ColorFiltered(
+              colorFilter: ColorFilter.mode(
+                context.appThemeExt.appColors.background
+                    .byBrightness(context.ext.theme.isDark)
+                    .onColor,
+                BlendMode.srcATop,
+              ),
+              child: Lottie.asset(
+                LottiesEnum.loading.path,
+                width: 100,
+                height: 100,
+              ),
+            )
+        else
+          SizedBox(
+            height: 310,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              padding: AppValues.xl.ext.padding.horizontal,
+              itemCount: 6,
+              separatorBuilder: (_, index) {
+                return AppValues.xl2.ext.sizedBox.horizontal;
+              },
+              itemBuilder: (_, index) {
+                if (artworks.length <= index) {
+                  return MetArtworkCard.shimmer(width: 200);
+                }
+                final artworkId = artworkIds![index];
+                final artwork = artworks[artworkId];
+                return artwork == null
+                    ? MetArtworkCard.shimmer(width: 200)
+                    : artwork.isFail
+                    ? MetArtworkCard.error(
+                      error: artwork.asFail.error.message,
+                      width: 200,
+                    )
+                    : MetArtworkCard(
+                      artwork: artwork.asSuccess.data,
+                      width: 200,
+                    );
+              },
+            ),
           ),
-        ),
       ],
     );
   }

@@ -2,14 +2,14 @@ part of '../search_collection_view_imports.dart';
 
 @RoutePage()
 class SearchCollectionView extends StatelessWidget {
-  const SearchCollectionView({required this.artworks, super.key});
+  const SearchCollectionView({required this.artworksIds, super.key});
 
-  final List<MetObjectModel> artworks;
+  final List<int> artworksIds;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SearchViewCubit(initialData: artworks),
+      create: (context) => SearchViewCubit(artworksIds: artworksIds)..init(),
       child: const Scaffold(
         appBar: CustomAppbar(
           isBackButtonVisible: true,

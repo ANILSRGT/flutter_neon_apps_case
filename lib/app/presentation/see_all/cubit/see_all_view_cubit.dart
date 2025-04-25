@@ -1,18 +1,18 @@
 import 'dart:async';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:neon_apps_case/app/domain/models/met_object_model.dart';
 import 'package:neon_apps_case/app/domain/repositories/met_museum_repo.dart';
 import 'package:neon_apps_case/injection.dart';
-import 'package:oktoast/oktoast.dart';
 import 'package:penta_core/penta_core.dart';
 
-part 'search_view_state.dart';
+part 'see_all_view_state.dart';
 
-class SearchViewCubit extends Cubit<SearchViewState> {
-  SearchViewCubit({required List<int> artworksIds})
-    : super(SearchViewState(artworksIds: artworksIds));
+class SeeAllViewCubit extends Cubit<SeeAllViewState> {
+  SeeAllViewCubit({required List<int> artworksIds})
+    : super(SeeAllViewState(artworksIds: artworksIds));
 
   final ScrollController scrollController = ScrollController();
   final int _batchSize = 8;
@@ -58,29 +58,5 @@ class SearchViewCubit extends Cubit<SearchViewState> {
     for (final id in idsToFetch) {
       unawaited(_fetchArtworkById(id));
     }
-  }
-
-  Future<void> search(String query) async {
-    if (query.isEmpty) return;
-    final oldData = state.artworksIds;
-
-    emit(state.copyWith(artworksIds: () => null));
-    final res = await Injection.I.read<MetMuseumRepo>().searchArtworks(
-      query: query,
-    );
-    if (isClosed) return;
-    if (res.isFail) {
-      showToast(res.asFail.error.message);
-      emit(state.copyWith(artworksIds: () => oldData));
-      return;
-    }
-    final artworks = res.asSuccess.data;
-    emit(
-      state.copyWith(
-        artworksIds: () => artworks.objectIDs ?? oldData,
-        maxArtworks: 8,
-      ),
-    );
-    unawaited(nextFetch());
   }
 }
