@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:neon_apps_case/app/common/configs/enums/image_sizes_enum.dart';
-import 'package:neon_apps_case/app/common/widgets/image/app_image.dart';
 
 enum IconsEnum {
   btnBack('btn_back'),
@@ -32,8 +31,8 @@ enum IconsEnum {
     ImageSizesEnum size = ImageSizesEnum.x,
     Color? color,
   }) {
-    return AppImage.asset(
-      path: path(size: size),
+    return Image.asset(
+      path(size: size),
       width: width,
       height: height,
       fit: fit,

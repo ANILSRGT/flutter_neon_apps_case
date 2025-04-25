@@ -11,19 +11,7 @@ class SeeAllView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppbar(isBackButtonVisible: true, title: title),
-      body: ListView.separated(
-        padding: AppValues.xl.ext.padding.horizontal,
-        itemCount: items.length,
-        separatorBuilder: (_, __) => AppValues.xl.ext.sizedBox.vertical,
-        itemBuilder: (context, index) {
-          final item = items[index];
-          return MetArtworkCard(
-            artwork: item,
-            height: 300,
-            contentPadding: AppValues.xl.value,
-          );
-        },
-      ),
+      body: _SeeAllViewBody(items: items),
     );
   }
 }

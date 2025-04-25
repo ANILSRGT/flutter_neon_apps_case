@@ -16,7 +16,13 @@ class AppRouter extends RootStackRouter {
   @override
   RouteType get defaultRouteType => RouteType.custom(
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      return FadeTransition(opacity: animation, child: child);
+      return SlideTransition(
+        position: Tween<Offset>(
+          begin: const Offset(0, 1),
+          end: Offset.zero,
+        ).animate(animation),
+        child: FadeTransition(opacity: animation, child: child),
+      );
     },
   );
 

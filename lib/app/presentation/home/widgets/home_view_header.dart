@@ -5,34 +5,42 @@ class _HomeViewHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        ImagesEnum.imgHome1.toAssetImage(
-          width: context.ext.screen.width,
-          fit: BoxFit.fitWidth,
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        maxHeight: context.ext.screen.byOrientation(
+          portrait: double.infinity,
+          landscape: 250,
         ),
-        Positioned(
-          bottom: 20,
-          left: 20,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: AppValues.sm.value,
-            children: [
-              Text(
-                AppStrings.homeWelcomeMessage,
-                style: context.ext.theme.textTheme.displayMedium?.copyWith(
-                  fontWeight: FontWeight.w500,
-                  color: context.appThemeExt.appColors.white.light,
-                ),
-              ),
-              AppButton.normal(
-                onPressed: () => context.read<MainViewCubit>().changePage(1),
-                text: AppStrings.homeExploreCollectionButton,
-              ),
-            ],
+      ),
+      child: Stack(
+        children: [
+          ImagesEnum.imgHome1.toAssetImage(
+            width: context.ext.screen.width,
+            fit: BoxFit.fitWidth,
           ),
-        ),
-      ],
+          Positioned(
+            bottom: 20,
+            left: 20,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: AppValues.sm.value,
+              children: [
+                Text(
+                  AppStrings.homeWelcomeMessage,
+                  style: context.ext.theme.textTheme.displayMedium?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: context.appThemeExt.appColors.white.light,
+                  ),
+                ),
+                AppButton.normal(
+                  onPressed: () => context.read<MainViewCubit>().changePage(1),
+                  text: AppStrings.homeExploreCollectionButton,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -6,6 +6,9 @@ class CollectionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: _CollectionViewBody());
+    return BlocProvider(
+      create: (context) => CollectionViewCubit()..fetchDepartments(),
+      child: const Scaffold(body: _CollectionViewBody()),
+    );
   }
 }

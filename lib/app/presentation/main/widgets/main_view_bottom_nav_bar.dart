@@ -9,6 +9,10 @@ class _MainViewBottomNavBar extends StatelessWidget {
       child: Padding(
         padding: AppValues.xl.ext.padding.horizontal,
         child: SizedBox(
+          width: context.ext.screen.byOrientation(
+            portrait: double.infinity,
+            landscape: math.min(context.ext.screen.width * 0.8, 600),
+          ),
           height: 90,
           child: LayoutBuilder(
             builder: (_, cst) {

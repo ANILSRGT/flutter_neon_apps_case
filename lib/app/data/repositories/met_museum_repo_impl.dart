@@ -94,9 +94,10 @@ class MetMuseumRepoImpl extends MetMuseumRepo with DataRepoMixin {
 
   @override
   Future<ResponseModel<List<MetObjectModel>>> searchArtworks({
-    required String query,
+    String? query,
     bool? isHighlight,
     bool? isOnView,
+    int? departmentId,
   }) async {
     return executeByDatasource(
       localCallback: () async {
@@ -108,10 +109,12 @@ class MetMuseumRepoImpl extends MetMuseumRepo with DataRepoMixin {
             artworks
                 .where(
                   (artwork) =>
-                      ((artwork.title?.contains(query) ?? false) ||
-                          (artwork.artistDisplayName?.contains(query) ??
-                              false) ||
-                          (artwork.objectName?.contains(query) ?? false)) &&
+                      (query != null &&
+                          ((artwork.title?.contains(query) ?? false) ||
+                              (artwork.artistDisplayName?.contains(query) ??
+                                  false) ||
+                              (artwork.objectName?.contains(query) ??
+                                  false))) &&
                       (isHighlight == null ||
                           artwork.isHighlight == isHighlight),
                 )
@@ -125,6 +128,7 @@ class MetMuseumRepoImpl extends MetMuseumRepo with DataRepoMixin {
               query: query,
               isHighlight: isHighlight,
               isOnView: isOnView,
+              departmentId: departmentId,
             );
 
         if (res.isFail) {

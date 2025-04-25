@@ -10,3 +10,7 @@ import 'package:neon_apps_case/app/domain/models/met_object_model.dart';
 import 'package:penta_core/penta_core.dart';
 
 part 'view/artwork_details_view.dart';
+part 'widgets/artwork_details_view_body.dart';
+part 'widgets/artwork_details_view_image.dart';
+part 'widgets/artwork_details_view_header.dart';
+part 'widgets/artwork_details_view_details.dart';

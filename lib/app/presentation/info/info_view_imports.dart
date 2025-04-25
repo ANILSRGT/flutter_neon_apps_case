@@ -10,3 +10,5 @@ import 'package:penta_core/penta_core.dart';
 
 part 'view/info_view.dart';
 part 'widgets/info_view_body.dart';
+part 'widgets/info_view_locations_and_hours.dart';
+part 'widgets/info_view_header.dart';

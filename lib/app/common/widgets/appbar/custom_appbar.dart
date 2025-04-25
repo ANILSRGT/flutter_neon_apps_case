@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:neon_apps_case/app/common/configs/enums/icons_enum.dart';
 import 'package:neon_apps_case/app/common/configs/theme/i_app_theme.dart';
 import 'package:neon_apps_case/app/common/router/app_router.dart';
@@ -18,6 +19,10 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      systemOverlayStyle:
+          context.ext.theme.isDark
+              ? SystemUiOverlayStyle.light
+              : SystemUiOverlayStyle.dark,
       toolbarHeight: 80,
       title: Text(title),
       leadingWidth: 63,

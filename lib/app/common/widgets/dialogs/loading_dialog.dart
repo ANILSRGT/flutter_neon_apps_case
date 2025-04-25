@@ -10,10 +10,10 @@ import 'package:penta_core/penta_core.dart';
 class LoadingDialog extends StatefulWidget {
   const LoadingDialog._({required this.future});
 
-  final Future<void> Function() future;
+  final Future<void> Function(bool Function() isCancelled) future;
 
   static Future<void> showLoadingDialog(
-    Future<void> Function(BuildContext context) future,
+    Future<void> Function(bool Function() isCancelled) future,
   ) async {
     final context = Injection.I.read<AppRouter>().navigatorKey.currentContext;
     if (context == null) return;
@@ -21,12 +21,7 @@ class LoadingDialog extends StatefulWidget {
       context: context,
       barrierDismissible: false,
       useSafeArea: false,
-      builder:
-          (_) => LoadingDialog._(
-            future: () async {
-              return future(context);
-            },
-          ),
+      builder: (_) => LoadingDialog._(future: future),
     );
   }
 
@@ -35,13 +30,21 @@ class LoadingDialog extends StatefulWidget {
 }
 
 class _LoadingDialogState extends State<LoadingDialog> {
+  bool _isCancelled = false;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (!mounted) return;
-      await widget.future();
+      await widget.future(() => _isCancelled);
     });
+  }
+
+  @override
+  void dispose() {
+    _isCancelled = true;
+    super.dispose();
   }
 
   @override

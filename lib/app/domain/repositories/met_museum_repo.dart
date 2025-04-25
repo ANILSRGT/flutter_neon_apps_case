@@ -8,8 +8,9 @@ abstract class MetMuseumRepo {
   Future<ResponseModel<MetObjectModel>> getArtworkById({required int id});
   Future<ResponseModel<List<DepartmentModel>>> getDepartments();
   Future<ResponseModel<List<MetObjectModel>>> searchArtworks({
-    required String query,
+    String? query,
     bool? isHighlight,
     bool? isOnView,
+    int? departmentId,
   });
 }

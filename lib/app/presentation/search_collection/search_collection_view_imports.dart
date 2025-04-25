@@ -10,4 +10,4 @@ import 'package:neon_apps_case/app/presentation/search_collection/cubit/search_v
 import 'package:penta_core/penta_core.dart';
 
 part 'view/search_collection_view.dart';
-part 'view/search_collection_view_body.dart';
+part 'widgets/search_collection_view_body.dart';

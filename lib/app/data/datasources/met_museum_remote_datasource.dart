@@ -10,9 +10,10 @@ abstract class MetMuseumRemoteDatasource {
   Future<ResponseModel<MetObjectModel>> getArtworkById({required int id});
   Future<ResponseModel<List<DepartmentModel>>> getDepartments();
   Future<ResponseModel<MetSearchModel>> searchArtworks({
-    required String query,
+    String? query,
     bool? isHighlight,
     bool? isOnView,
+    int? departmentId,
   });
 }
 
@@ -109,16 +110,18 @@ class MetMuseumRemoteDatasourceImpl implements MetMuseumRemoteDatasource {
 
   @override
   Future<ResponseModel<MetSearchModel>> searchArtworks({
-    required String query,
+    String? query,
     bool? isHighlight,
     bool? isOnView,
+    int? departmentId,
   }) async {
     const url = 'search';
     final params = {
-      'q': query,
+      if (query != null) 'q': query,
       'hasImages': true,
       if (isHighlight != null) 'isHighlight': isHighlight,
       if (isOnView != null) 'isOnView': isOnView,
+      if (departmentId != null) 'departmentId': departmentId,
     };
     try {
       final response = await _dio.get<Map<String, dynamic>>(

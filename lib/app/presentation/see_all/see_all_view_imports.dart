@@ -6,3 +6,4 @@ import 'package:neon_apps_case/app/domain/models/met_object_model.dart';
 import 'package:penta_core/penta_core.dart';
 
 part 'view/see_all_view.dart';
+part 'widgets/see_all_view_body.dart';
