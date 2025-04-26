@@ -64,6 +64,22 @@ class CollectionRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [FavoritesView]
+class FavoritesRoute extends PageRouteInfo<void> {
+  const FavoritesRoute({List<PageRouteInfo>? children})
+    : super(FavoritesRoute.name, initialChildren: children);
+
+  static const String name = 'FavoritesRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const FavoritesView();
+    },
+  );
+}
+
+/// generated route for
 /// [HomeView]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})

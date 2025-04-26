@@ -110,7 +110,7 @@ final _entities = <obx_int.ModelEntity>[
   obx_int.ModelEntity(
     id: const obx_int.IdUid(3, 19295087172538908),
     name: 'MetObjectModel',
-    lastPropertyId: const obx_int.IdUid(533, 5624954205049556016),
+    lastPropertyId: const obx_int.IdUid(592, 5172262346605671222),
     flags: 0,
     properties: <obx_int.ModelProperty>[
       obx_int.ModelProperty(
@@ -120,326 +120,326 @@ final _entities = <obx_int.ModelEntity>[
         flags: 129,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(480, 882963413552994238),
+        id: const obx_int.IdUid(539, 828908659242022115),
         name: 'objectID',
         type: 6,
         flags: 40,
-        indexId: const obx_int.IdUid(12, 2201990526340279742),
+        indexId: const obx_int.IdUid(13, 5238805437530463144),
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(481, 7002988654089552798),
+        id: const obx_int.IdUid(540, 4215677691968262785),
         name: 'isHighlight',
         type: 1,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(482, 1602271247431575541),
+        id: const obx_int.IdUid(541, 4996073330277553723),
         name: 'accessionNumber',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(483, 8364619822417522360),
+        id: const obx_int.IdUid(542, 7008921498818961948),
         name: 'accessionYear',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(484, 3283667009976972576),
+        id: const obx_int.IdUid(543, 7218271361599570479),
         name: 'isPublicDomain',
         type: 1,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(485, 5649429843149979697),
+        id: const obx_int.IdUid(544, 7447281795850156952),
         name: 'primaryImage',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(486, 3236936707547607959),
+        id: const obx_int.IdUid(545, 5414545217930262773),
         name: 'primaryImageSmall',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(487, 5009234154000491919),
+        id: const obx_int.IdUid(546, 6298348959810297960),
         name: 'department',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(488, 3479408054947038254),
+        id: const obx_int.IdUid(547, 4535040168726159321),
         name: 'objectName',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(489, 3310509441345395031),
+        id: const obx_int.IdUid(548, 4272875824433334958),
         name: 'title',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(490, 870160037387411843),
+        id: const obx_int.IdUid(549, 712017287801297935),
         name: 'culture',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(491, 7832976160230688945),
+        id: const obx_int.IdUid(550, 1126041295071599844),
         name: 'period',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(492, 2112635404905141863),
+        id: const obx_int.IdUid(551, 6586473945096159183),
         name: 'dynasty',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(493, 838148584994565047),
+        id: const obx_int.IdUid(552, 4982014708343285237),
         name: 'reign',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(494, 6022764064613730277),
+        id: const obx_int.IdUid(553, 6925873921811597033),
         name: 'portfolio',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(495, 5329151414674635938),
+        id: const obx_int.IdUid(554, 4924225323447392662),
         name: 'artistRole',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(496, 5477669722213352469),
+        id: const obx_int.IdUid(555, 2008288593633903778),
         name: 'artistPrefix',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(497, 20281667274231903),
+        id: const obx_int.IdUid(556, 2621783642429885699),
         name: 'artistDisplayName',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(498, 2645833170896893840),
+        id: const obx_int.IdUid(557, 8611280969841902255),
         name: 'artistDisplayBio',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(499, 136802170985352328),
+        id: const obx_int.IdUid(558, 7938147287438119568),
         name: 'artistSuffix',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(500, 6930596169574163912),
+        id: const obx_int.IdUid(559, 6147470622638390241),
         name: 'artistAlphaSort',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(501, 1967483555481751841),
+        id: const obx_int.IdUid(560, 2819294261981928544),
         name: 'artistNationality',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(502, 6682363406758215752),
+        id: const obx_int.IdUid(561, 7504133205507038117),
         name: 'artistBeginDate',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(503, 8482781785740045380),
+        id: const obx_int.IdUid(562, 1656453109967441),
         name: 'artistEndDate',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(504, 5402742129902392017),
+        id: const obx_int.IdUid(563, 1117420944726033490),
         name: 'artistGender',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(505, 8139644727369419852),
+        id: const obx_int.IdUid(564, 4851689980068604342),
         name: 'artistWikidata_URL',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(506, 5111010942953382200),
+        id: const obx_int.IdUid(565, 2240670296805350212),
         name: 'artistULAN_URL',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(507, 5939180699463022741),
+        id: const obx_int.IdUid(566, 4465045710291928966),
         name: 'objectDate',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(508, 5290642278519575003),
+        id: const obx_int.IdUid(567, 3193090064240497258),
         name: 'objectBeginDate',
         type: 6,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(509, 3779605666357961476),
+        id: const obx_int.IdUid(568, 911340698089845043),
         name: 'objectEndDate',
         type: 6,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(510, 6419416281060487704),
+        id: const obx_int.IdUid(569, 6410570017671019613),
         name: 'medium',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(511, 47963044649736933),
+        id: const obx_int.IdUid(570, 149914121693432709),
         name: 'dimensions',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(512, 237801887822967457),
+        id: const obx_int.IdUid(571, 5017505862398462896),
         name: 'creditLine',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(513, 2019034504018980769),
+        id: const obx_int.IdUid(572, 5568252387488658925),
         name: 'geographyType',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(514, 7319984107101228337),
+        id: const obx_int.IdUid(573, 6163254037369097081),
         name: 'city',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(515, 1292517723938430330),
+        id: const obx_int.IdUid(574, 6231580191592769324),
         name: 'state',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(516, 1257033986992385911),
+        id: const obx_int.IdUid(575, 1278346454295881185),
         name: 'county',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(517, 2474207554537453161),
+        id: const obx_int.IdUid(576, 17446305922967952),
         name: 'country',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(518, 7475635724803399095),
+        id: const obx_int.IdUid(577, 3694963989078978839),
         name: 'region',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(519, 9127458615366194633),
+        id: const obx_int.IdUid(578, 1731252481598274547),
         name: 'subregion',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(520, 2572767609125912931),
+        id: const obx_int.IdUid(579, 8863164101369443493),
         name: 'locale',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(521, 2543576115371616272),
+        id: const obx_int.IdUid(580, 8442250979487711198),
         name: 'locus',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(522, 590013810694597279),
+        id: const obx_int.IdUid(581, 8148831016797401919),
         name: 'excavation',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(523, 1886904719983935600),
+        id: const obx_int.IdUid(582, 6654195608146155271),
         name: 'river',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(524, 2182566104171435421),
+        id: const obx_int.IdUid(583, 5949305571220427753),
         name: 'classification',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(525, 5647739687931350671),
+        id: const obx_int.IdUid(584, 7778405009859046244),
         name: 'rightsAndReproduction',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(526, 6481236973402611020),
+        id: const obx_int.IdUid(585, 4535769968035125648),
         name: 'linkResource',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(527, 6693285658649731024),
+        id: const obx_int.IdUid(586, 61077213390203303),
         name: 'metadataDate',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(528, 6303819667049235691),
+        id: const obx_int.IdUid(587, 7440119342385834836),
         name: 'repository',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(529, 1889107049125166121),
+        id: const obx_int.IdUid(588, 5431470182555799399),
         name: 'objectURL',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(530, 7913318502490633233),
+        id: const obx_int.IdUid(589, 7851967318527460989),
         name: 'objectWikidata_URL',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(531, 5928643917725475688),
+        id: const obx_int.IdUid(590, 1862550882897435335),
         name: 'isTimelineWork',
         type: 1,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(532, 6448091887765209943),
+        id: const obx_int.IdUid(591, 8419449577016499570),
         name: 'GalleryNumber',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(533, 5624954205049556016),
+        id: const obx_int.IdUid(592, 5172262346605671222),
         name: 'additionalImages',
         type: 30,
         flags: 0,
@@ -579,7 +579,7 @@ obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
     entities: _entities,
     lastEntityId: const obx_int.IdUid(6, 459039736759376053),
-    lastIndexId: const obx_int.IdUid(12, 2201990526340279742),
+    lastIndexId: const obx_int.IdUid(13, 5238805437530463144),
     lastRelationId: const obx_int.IdUid(0, 0),
     lastSequenceId: const obx_int.IdUid(0, 0),
     retiredEntityUids: const [],
@@ -593,6 +593,7 @@ obx_int.ModelDefinition getObjectBoxModel() {
       1777894578846745209,
       7077638712424727751,
       3474804029797598456,
+      2201990526340279742,
     ],
     retiredPropertyUids: const [
       6923034305603945876,
@@ -1075,6 +1076,65 @@ obx_int.ModelDefinition getObjectBoxModel() {
       3889385724422894608,
       138513279620793496,
       7712312526170004931,
+      882963413552994238,
+      7002988654089552798,
+      1602271247431575541,
+      8364619822417522360,
+      3283667009976972576,
+      5649429843149979697,
+      3236936707547607959,
+      5009234154000491919,
+      3479408054947038254,
+      3310509441345395031,
+      870160037387411843,
+      7832976160230688945,
+      2112635404905141863,
+      838148584994565047,
+      6022764064613730277,
+      5329151414674635938,
+      5477669722213352469,
+      20281667274231903,
+      2645833170896893840,
+      136802170985352328,
+      6930596169574163912,
+      1967483555481751841,
+      6682363406758215752,
+      8482781785740045380,
+      5402742129902392017,
+      8139644727369419852,
+      5111010942953382200,
+      5939180699463022741,
+      5290642278519575003,
+      3779605666357961476,
+      6419416281060487704,
+      47963044649736933,
+      237801887822967457,
+      2019034504018980769,
+      7319984107101228337,
+      1292517723938430330,
+      1257033986992385911,
+      2474207554537453161,
+      7475635724803399095,
+      9127458615366194633,
+      2572767609125912931,
+      2543576115371616272,
+      590013810694597279,
+      1886904719983935600,
+      2182566104171435421,
+      5647739687931350671,
+      6481236973402611020,
+      6693285658649731024,
+      6303819667049235691,
+      1889107049125166121,
+      7913318502490633233,
+      5928643917725475688,
+      6448091887765209943,
+      5624954205049556016,
+      8837388214227446295,
+      8263608758787818323,
+      8016525785819463430,
+      5881999755116643433,
+      8723937728004451044,
     ],
     retiredRelationUids: const [],
     modelVersion: 5,
@@ -1404,62 +1464,62 @@ obx_int.ModelDefinition getObjectBoxModel() {
                       .map(fbb.writeString)
                       .toList(growable: false),
                 );
-        fbb.startTable(534);
+        fbb.startTable(593);
         fbb.addInt64(178, object.localId ?? 0);
-        fbb.addInt64(479, object.objectID);
-        fbb.addBool(480, object.isHighlight);
-        fbb.addOffset(481, accessionNumberOffset);
-        fbb.addOffset(482, accessionYearOffset);
-        fbb.addBool(483, object.isPublicDomain);
-        fbb.addOffset(484, primaryImageOffset);
-        fbb.addOffset(485, primaryImageSmallOffset);
-        fbb.addOffset(486, departmentOffset);
-        fbb.addOffset(487, objectNameOffset);
-        fbb.addOffset(488, titleOffset);
-        fbb.addOffset(489, cultureOffset);
-        fbb.addOffset(490, periodOffset);
-        fbb.addOffset(491, dynastyOffset);
-        fbb.addOffset(492, reignOffset);
-        fbb.addOffset(493, portfolioOffset);
-        fbb.addOffset(494, artistRoleOffset);
-        fbb.addOffset(495, artistPrefixOffset);
-        fbb.addOffset(496, artistDisplayNameOffset);
-        fbb.addOffset(497, artistDisplayBioOffset);
-        fbb.addOffset(498, artistSuffixOffset);
-        fbb.addOffset(499, artistAlphaSortOffset);
-        fbb.addOffset(500, artistNationalityOffset);
-        fbb.addOffset(501, artistBeginDateOffset);
-        fbb.addOffset(502, artistEndDateOffset);
-        fbb.addOffset(503, artistGenderOffset);
-        fbb.addOffset(504, artistWikidata_URLOffset);
-        fbb.addOffset(505, artistULAN_URLOffset);
-        fbb.addOffset(506, objectDateOffset);
-        fbb.addInt64(507, object.objectBeginDate);
-        fbb.addInt64(508, object.objectEndDate);
-        fbb.addOffset(509, mediumOffset);
-        fbb.addOffset(510, dimensionsOffset);
-        fbb.addOffset(511, creditLineOffset);
-        fbb.addOffset(512, geographyTypeOffset);
-        fbb.addOffset(513, cityOffset);
-        fbb.addOffset(514, stateOffset);
-        fbb.addOffset(515, countyOffset);
-        fbb.addOffset(516, countryOffset);
-        fbb.addOffset(517, regionOffset);
-        fbb.addOffset(518, subregionOffset);
-        fbb.addOffset(519, localeOffset);
-        fbb.addOffset(520, locusOffset);
-        fbb.addOffset(521, excavationOffset);
-        fbb.addOffset(522, riverOffset);
-        fbb.addOffset(523, classificationOffset);
-        fbb.addOffset(524, rightsAndReproductionOffset);
-        fbb.addOffset(525, linkResourceOffset);
-        fbb.addOffset(526, metadataDateOffset);
-        fbb.addOffset(527, repositoryOffset);
-        fbb.addOffset(528, objectURLOffset);
-        fbb.addOffset(529, objectWikidata_URLOffset);
-        fbb.addBool(530, object.isTimelineWork);
-        fbb.addOffset(531, GalleryNumberOffset);
-        fbb.addOffset(532, additionalImagesOffset);
+        fbb.addInt64(538, object.objectID);
+        fbb.addBool(539, object.isHighlight);
+        fbb.addOffset(540, accessionNumberOffset);
+        fbb.addOffset(541, accessionYearOffset);
+        fbb.addBool(542, object.isPublicDomain);
+        fbb.addOffset(543, primaryImageOffset);
+        fbb.addOffset(544, primaryImageSmallOffset);
+        fbb.addOffset(545, departmentOffset);
+        fbb.addOffset(546, objectNameOffset);
+        fbb.addOffset(547, titleOffset);
+        fbb.addOffset(548, cultureOffset);
+        fbb.addOffset(549, periodOffset);
+        fbb.addOffset(550, dynastyOffset);
+        fbb.addOffset(551, reignOffset);
+        fbb.addOffset(552, portfolioOffset);
+        fbb.addOffset(553, artistRoleOffset);
+        fbb.addOffset(554, artistPrefixOffset);
+        fbb.addOffset(555, artistDisplayNameOffset);
+        fbb.addOffset(556, artistDisplayBioOffset);
+        fbb.addOffset(557, artistSuffixOffset);
+        fbb.addOffset(558, artistAlphaSortOffset);
+        fbb.addOffset(559, artistNationalityOffset);
+        fbb.addOffset(560, artistBeginDateOffset);
+        fbb.addOffset(561, artistEndDateOffset);
+        fbb.addOffset(562, artistGenderOffset);
+        fbb.addOffset(563, artistWikidata_URLOffset);
+        fbb.addOffset(564, artistULAN_URLOffset);
+        fbb.addOffset(565, objectDateOffset);
+        fbb.addInt64(566, object.objectBeginDate);
+        fbb.addInt64(567, object.objectEndDate);
+        fbb.addOffset(568, mediumOffset);
+        fbb.addOffset(569, dimensionsOffset);
+        fbb.addOffset(570, creditLineOffset);
+        fbb.addOffset(571, geographyTypeOffset);
+        fbb.addOffset(572, cityOffset);
+        fbb.addOffset(573, stateOffset);
+        fbb.addOffset(574, countyOffset);
+        fbb.addOffset(575, countryOffset);
+        fbb.addOffset(576, regionOffset);
+        fbb.addOffset(577, subregionOffset);
+        fbb.addOffset(578, localeOffset);
+        fbb.addOffset(579, locusOffset);
+        fbb.addOffset(580, excavationOffset);
+        fbb.addOffset(581, riverOffset);
+        fbb.addOffset(582, classificationOffset);
+        fbb.addOffset(583, rightsAndReproductionOffset);
+        fbb.addOffset(584, linkResourceOffset);
+        fbb.addOffset(585, metadataDateOffset);
+        fbb.addOffset(586, repositoryOffset);
+        fbb.addOffset(587, objectURLOffset);
+        fbb.addOffset(588, objectWikidata_URLOffset);
+        fbb.addBool(589, object.isTimelineWork);
+        fbb.addOffset(590, GalleryNumberOffset);
+        fbb.addOffset(591, additionalImagesOffset);
         fbb.finish(fbb.endTable());
         return object.localId ?? 0;
       },
@@ -1474,178 +1534,178 @@ obx_int.ModelDefinition getObjectBoxModel() {
         final objectIDParam = const fb.Int64Reader().vTableGetNullable(
           buffer,
           rootOffset,
-          962,
+          1080,
         );
         final isHighlightParam = const fb.BoolReader().vTableGetNullable(
           buffer,
           rootOffset,
-          964,
+          1082,
         );
         final accessionNumberParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 966);
+        ).vTableGetNullable(buffer, rootOffset, 1084);
         final accessionYearParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 968);
+        ).vTableGetNullable(buffer, rootOffset, 1086);
         final isPublicDomainParam = const fb.BoolReader().vTableGetNullable(
           buffer,
           rootOffset,
-          970,
+          1088,
         );
         final primaryImageParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 972);
+        ).vTableGetNullable(buffer, rootOffset, 1090);
         final primaryImageSmallParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 974);
+        ).vTableGetNullable(buffer, rootOffset, 1092);
         final additionalImagesParam = const fb.ListReader<String>(
           fb.StringReader(asciiOptimization: true),
           lazy: false,
-        ).vTableGetNullable(buffer, rootOffset, 1068);
+        ).vTableGetNullable(buffer, rootOffset, 1186);
         final departmentParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 976);
+        ).vTableGetNullable(buffer, rootOffset, 1094);
         final objectNameParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 978);
+        ).vTableGetNullable(buffer, rootOffset, 1096);
         final titleParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 980);
+        ).vTableGetNullable(buffer, rootOffset, 1098);
         final cultureParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 982);
+        ).vTableGetNullable(buffer, rootOffset, 1100);
         final periodParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 984);
+        ).vTableGetNullable(buffer, rootOffset, 1102);
         final dynastyParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 986);
+        ).vTableGetNullable(buffer, rootOffset, 1104);
         final reignParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 988);
+        ).vTableGetNullable(buffer, rootOffset, 1106);
         final portfolioParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 990);
+        ).vTableGetNullable(buffer, rootOffset, 1108);
         final artistRoleParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 992);
+        ).vTableGetNullable(buffer, rootOffset, 1110);
         final artistPrefixParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 994);
+        ).vTableGetNullable(buffer, rootOffset, 1112);
         final artistDisplayNameParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 996);
+        ).vTableGetNullable(buffer, rootOffset, 1114);
         final artistDisplayBioParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 998);
+        ).vTableGetNullable(buffer, rootOffset, 1116);
         final artistSuffixParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1000);
+        ).vTableGetNullable(buffer, rootOffset, 1118);
         final artistAlphaSortParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1002);
+        ).vTableGetNullable(buffer, rootOffset, 1120);
         final artistNationalityParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1004);
+        ).vTableGetNullable(buffer, rootOffset, 1122);
         final artistBeginDateParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1006);
+        ).vTableGetNullable(buffer, rootOffset, 1124);
         final artistEndDateParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1008);
+        ).vTableGetNullable(buffer, rootOffset, 1126);
         final artistGenderParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1010);
+        ).vTableGetNullable(buffer, rootOffset, 1128);
         final artistWikidata_URLParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1012);
+        ).vTableGetNullable(buffer, rootOffset, 1130);
         final artistULAN_URLParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1014);
+        ).vTableGetNullable(buffer, rootOffset, 1132);
         final objectDateParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1016);
+        ).vTableGetNullable(buffer, rootOffset, 1134);
         final objectBeginDateParam = const fb.Int64Reader().vTableGetNullable(
           buffer,
           rootOffset,
-          1018,
+          1136,
         );
         final objectEndDateParam = const fb.Int64Reader().vTableGetNullable(
           buffer,
           rootOffset,
-          1020,
+          1138,
         );
         final mediumParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1022);
+        ).vTableGetNullable(buffer, rootOffset, 1140);
         final dimensionsParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1024);
+        ).vTableGetNullable(buffer, rootOffset, 1142);
         final creditLineParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1026);
+        ).vTableGetNullable(buffer, rootOffset, 1144);
         final geographyTypeParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1028);
+        ).vTableGetNullable(buffer, rootOffset, 1146);
         final cityParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1030);
+        ).vTableGetNullable(buffer, rootOffset, 1148);
         final stateParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1032);
+        ).vTableGetNullable(buffer, rootOffset, 1150);
         final countyParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1034);
+        ).vTableGetNullable(buffer, rootOffset, 1152);
         final countryParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1036);
+        ).vTableGetNullable(buffer, rootOffset, 1154);
         final regionParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1038);
+        ).vTableGetNullable(buffer, rootOffset, 1156);
         final subregionParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1040);
+        ).vTableGetNullable(buffer, rootOffset, 1158);
         final localeParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1042);
+        ).vTableGetNullable(buffer, rootOffset, 1160);
         final locusParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1044);
+        ).vTableGetNullable(buffer, rootOffset, 1162);
         final excavationParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1046);
+        ).vTableGetNullable(buffer, rootOffset, 1164);
         final riverParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1048);
+        ).vTableGetNullable(buffer, rootOffset, 1166);
         final classificationParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1050);
+        ).vTableGetNullable(buffer, rootOffset, 1168);
         final rightsAndReproductionParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1052);
+        ).vTableGetNullable(buffer, rootOffset, 1170);
         final linkResourceParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1054);
+        ).vTableGetNullable(buffer, rootOffset, 1172);
         final metadataDateParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1056);
+        ).vTableGetNullable(buffer, rootOffset, 1174);
         final repositoryParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1058);
+        ).vTableGetNullable(buffer, rootOffset, 1176);
         final objectURLParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1060);
+        ).vTableGetNullable(buffer, rootOffset, 1178);
         final objectWikidata_URLParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1062);
+        ).vTableGetNullable(buffer, rootOffset, 1180);
         final isTimelineWorkParam = const fb.BoolReader().vTableGetNullable(
           buffer,
           rootOffset,
-          1064,
+          1182,
         );
         final GalleryNumberParam = const fb.StringReader(
           asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 1066);
+        ).vTableGetNullable(buffer, rootOffset, 1184);
         final object = MetObjectModel(
           localId: localIdParam,
           objectID: objectIDParam,

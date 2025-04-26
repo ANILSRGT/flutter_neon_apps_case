@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:neon_apps_case/app/domain/models/met_object_model.dart';
 import 'package:neon_apps_case/app/presentation/artwork_details/artwork_details_view_imports.dart';
 import 'package:neon_apps_case/app/presentation/collection/collection_view_imports.dart';
+import 'package:neon_apps_case/app/presentation/favorites/favorites_view_imports.dart';
 import 'package:neon_apps_case/app/presentation/home/home_view_imports.dart';
 import 'package:neon_apps_case/app/presentation/info/info_view_imports.dart';
 import 'package:neon_apps_case/app/presentation/main/main_view_imports.dart';
@@ -35,6 +36,7 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: SeeAllRoute.page),
     AutoRoute(page: SearchCollectionRoute.page),
     AutoRoute(page: ArtworkDetailsRoute.page),
+    AutoRoute(page: FavoritesRoute.page),
   ];
 
   @override

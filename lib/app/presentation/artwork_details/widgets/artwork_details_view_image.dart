@@ -33,20 +33,17 @@ class _ArtworkDetailsViewImage extends StatelessWidget {
           ),
           borderRadius: AppValues.md.ext.radius.border.all,
         ),
-        child: Hero(
-          tag: image.isEmpty ? GlobalKey() : image,
-          child: AppImage.network(
-            url:
-                artwork.primaryImage != null
-                    ? artwork.primaryImage!
-                    : artwork.primaryImageSmall != null
-                    ? artwork.primaryImageSmall!
-                    : (artwork.additionalImages != null &&
-                        artwork.additionalImages!.isNotEmpty)
-                    ? artwork.additionalImages!.first
-                    : '',
-            fit: BoxFit.fitWidth,
-          ),
+        child: AppImage.network(
+          url:
+              artwork.primaryImage != null
+                  ? artwork.primaryImage!
+                  : artwork.primaryImageSmall != null
+                  ? artwork.primaryImageSmall!
+                  : (artwork.additionalImages != null &&
+                      artwork.additionalImages!.isNotEmpty)
+                  ? artwork.additionalImages!.first
+                  : '',
+          fit: BoxFit.fitWidth,
         ),
       ),
     );

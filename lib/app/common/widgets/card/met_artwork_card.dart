@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:neon_apps_case/app/common/configs/app_strings.dart';
 import 'package:neon_apps_case/app/common/configs/theme/i_app_theme.dart';
+import 'package:neon_apps_case/app/common/cubits/favorites/favorites_cubit.dart';
 import 'package:neon_apps_case/app/common/extensions/widget_ext.dart';
 import 'package:neon_apps_case/app/common/router/app_router.dart';
 import 'package:neon_apps_case/app/common/widgets/card/app_card.dart';
@@ -61,6 +63,9 @@ class MetArtworkCard extends StatelessWidget {
                 artwork.additionalImages!.isNotEmpty)
             ? artwork.additionalImages!.first
             : '';
+    final isFavorite = context.watch<FavoritesCubit>().state.favorites.any(
+      (e) => e.objectID != null && e.objectID == artwork.objectID,
+    );
     return AppCard(
       onTap: () {
         Injection.I.read<AppRouter>().push(
@@ -73,21 +78,54 @@ class MetArtworkCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: context.appThemeExt.appColors.grey.light.withValues(
-                      alpha: 0.2,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                Positioned.fill(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: context.appThemeExt.appColors.grey.light
+                              .withValues(alpha: 0.2),
+                          width: 0.5,
+                        ),
+                      ),
                     ),
-                    width: 0.5,
+                    child: AppImage.network(url: image, fit: BoxFit.cover),
                   ),
                 ),
-              ),
-              child: Hero(
-                tag: image.isEmpty ? GlobalKey() : image,
-                child: AppImage.network(url: image, fit: BoxFit.cover),
-              ),
+                Positioned(
+                  top: AppValues.md.value,
+                  right: AppValues.md.value,
+                  child: GestureDetector(
+                    onTap: () {
+                      context.read<FavoritesCubit>().toggleFavorite(artwork);
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: context.appThemeExt.appColors.white.light
+                          .withValues(alpha: 0.4),
+                      radius: 20,
+                      child: Icon(
+                        isFavorite
+                            ? Icons.star_rounded
+                            : Icons.star_border_rounded,
+                        color:
+                            isFavorite
+                                ? context.appThemeExt.appColors.primary
+                                : context
+                                    .appThemeExt
+                                    .appColors
+                                    .white
+                                    .light
+                                    .onColor
+                                    .withValues(alpha: 0.6),
+                        size: 32,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Column(

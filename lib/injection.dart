@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:neon_apps_case/app/common/cache/object_box.dart';
 import 'package:neon_apps_case/app/common/configs/app_env.dart';
 import 'package:neon_apps_case/app/common/router/app_router.dart';
-import 'package:neon_apps_case/app/data/datasources/met_museum_local_datasource.dart';
 import 'package:neon_apps_case/app/data/datasources/met_museum_remote_datasource.dart';
 import 'package:neon_apps_case/app/data/repositories/met_museum_repo_impl.dart';
 import 'package:neon_apps_case/app/domain/repositories/met_museum_repo.dart';
@@ -32,11 +32,9 @@ final class Injection {
 
     _sl
       ..registerLazySingleton<AppRouter>(AppRouter.new)
+      ..registerLazySingleton<ObjectBox>(ObjectBox.new)
       ..registerFactory<MetMuseumRemoteDatasource>(
         () => MetMuseumRemoteDatasourceImpl(dio: baseMetApiDio),
-      )
-      ..registerFactory<MetMuseumLocalDataSource>(
-        MetMuseumLocalDataSourceImpl.new,
       )
       ..registerFactory<MetMuseumRepo>(MetMuseumRepoImpl.new);
   }

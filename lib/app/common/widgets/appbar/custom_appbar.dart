@@ -10,11 +10,13 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppbar({
     required this.title,
     this.isBackButtonVisible = false,
+    this.actions,
     super.key,
   });
 
   final String title;
   final bool isBackButtonVisible;
+  final List<Widget>? actions;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
               : SystemUiOverlayStyle.dark,
       toolbarHeight: 80,
       title: Text(title),
+      centerTitle: true,
       leadingWidth: 63,
       leading:
           isBackButtonVisible
@@ -40,6 +43,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                 },
               )
               : null,
+      actions: actions?..add(AppValues.xl.ext.sizedBox.horizontal),
     );
   }
 

@@ -11,7 +11,28 @@ class _HomeViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             AppValues.xl2.ext.sizedBox.vertical,
-            const SizedBox.square(dimension: 70, child: AppLogo()),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              spacing: AppValues.sm.value,
+              children: [
+                const SizedBox.square(dimension: 40),
+                const SizedBox.square(dimension: 70, child: AppLogo()),
+                CircleAvatar(
+                  radius: 20,
+                  backgroundColor: context.appThemeExt.appColors.primary,
+                  foregroundColor:
+                      context.appThemeExt.appColors.primary.onColor,
+                  child: IconButton(
+                    onPressed:
+                        () => Injection.I.read<AppRouter>().push(
+                          const FavoritesRoute(),
+                        ),
+                    iconSize: 24,
+                    icon: const Icon(Icons.star_rounded),
+                  ),
+                ),
+              ],
+            ).appWidgetExt.paddingSymmetric(horizontal: AppValues.xl.value),
             AppValues.xl4.ext.sizedBox.vertical,
             const _HomeViewHeader(),
             AppValues.xl2.ext.sizedBox.vertical,
