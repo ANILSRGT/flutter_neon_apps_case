@@ -7,24 +7,18 @@ import 'package:neon_apps_case/app/domain/models/department_model.dart';
 import 'package:neon_apps_case/app/domain/repositories/met_museum_repo.dart';
 import 'package:neon_apps_case/injection.dart';
 import 'package:oktoast/oktoast.dart';
-import 'package:penta_core/penta_core.dart';
 
 part 'collection_view_state.dart';
 
 class CollectionViewCubit extends Cubit<CollectionViewState> {
   CollectionViewCubit() : super(const CollectionViewState());
 
-  late final PentaDebounceable<void, String?> debouncer =
-      PentaDebouncer.debounce(
-        debounceDuration: const Duration(milliseconds: 500),
-        function: (query) async {
-          if (query == null || query.isEmpty) return;
-          await searchCollection(query: query);
-        },
-      );
+  final TextEditingController searchController = TextEditingController();
+  final FocusNode searchFocusNode = FocusNode();
 
   Future<void> searchCollection({String? query, int? departmentId}) async {
     if ((query == null || query.isEmpty) && departmentId == null) return;
+    searchController.clear();
 
     await LoadingDialog.showLoadingDialog((isCancelled) async {
       if (isCancelled()) return;

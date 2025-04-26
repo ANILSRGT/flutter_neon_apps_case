@@ -7,10 +7,12 @@ class _CollectionViewSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppTextFormField.search(
       context: context,
-      focusNode: FocusNode(),
-      controller: TextEditingController(),
+      controller: context.read<CollectionViewCubit>().searchController,
+      focusNode: context.read<CollectionViewCubit>().searchFocusNode,
       onSearched: (newValue) async {
-        context.read<CollectionViewCubit>().debouncer.call(newValue);
+        await context.read<CollectionViewCubit>().searchCollection(
+          query: newValue,
+        );
       },
     ).appWidgetExt.paddingSymmetric(horizontal: AppValues.xl.value);
   }

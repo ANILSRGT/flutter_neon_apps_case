@@ -17,8 +17,8 @@ class _SearchCollectionViewBody extends StatelessWidget {
           children: [
             AppTextFormField.search(
               context: context,
-              controller: TextEditingController(),
-              focusNode: FocusNode(),
+              controller: context.read<SearchViewCubit>().searchController,
+              focusNode: context.read<SearchViewCubit>().searchFocusNode,
               onSearched: (value) {
                 if (value == null) return;
                 context.read<SearchViewCubit>().search(value);

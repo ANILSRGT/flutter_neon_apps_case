@@ -15,6 +15,8 @@ class SearchViewCubit extends Cubit<SearchViewState> {
     : super(SearchViewState(artworksIds: artworksIds));
 
   final ScrollController scrollController = ScrollController();
+  final TextEditingController searchController = TextEditingController();
+  final FocusNode searchFocusNode = FocusNode();
   final int _batchSize = 8;
 
   void init() {
@@ -62,9 +64,10 @@ class SearchViewCubit extends Cubit<SearchViewState> {
 
   Future<void> search(String query) async {
     if (query.isEmpty) return;
+    searchController.clear();
     final oldData = state.artworksIds;
 
-    emit(state.copyWith(artworksIds: () => null));
+    emit(state.copyWith(artworksIds: () => null, maxArtworks: 0));
     final res = await Injection.I.read<MetMuseumRepo>().searchArtworks(
       query: query,
     );
